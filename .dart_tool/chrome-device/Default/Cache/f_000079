@@ -1,0 +1,476 @@
+define(['dart_sdk', 'packages/equatable/src/equatable_mixin.dart', 'packages/flutter/src/painting/box_border.dart', 'packages/flutter/src/material/colors.dart', 'packages/flutter/src/painting/borders.dart', 'packages/fl_chart/src/chart/base/base_chart/touch_input.dart', 'packages/fl_chart/src/utils/utils.dart', 'packages/flutter/src/painting/strut_style.dart', 'packages/flutter/src/rendering/custom_paint.dart'], (function load__packages__fl_chart__src__chart__base__base_chart__base_chart_data_dart(dart_sdk, packages__equatable__src__equatable_mixin$46dart, packages__flutter__src__painting__box_border$46dart, packages__flutter__src__material__colors$46dart, packages__flutter__src__painting__borders$46dart, packages__fl_chart__src__chart__base__base_chart__touch_input$46dart, packages__fl_chart__src__utils__utils$46dart, packages__flutter__src__painting__strut_style$46dart, packages__flutter__src__rendering__custom_paint$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const _interceptors = dart_sdk._interceptors;
+  const ui = dart_sdk.ui;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const equatable_mixin = packages__equatable__src__equatable_mixin$46dart.src__equatable_mixin;
+  const box_border = packages__flutter__src__painting__box_border$46dart.src__painting__box_border;
+  const colors = packages__flutter__src__material__colors$46dart.src__material__colors;
+  const borders = packages__flutter__src__painting__borders$46dart.src__painting__borders;
+  const touch_input = packages__fl_chart__src__chart__base__base_chart__touch_input$46dart.src__chart__base__base_chart__touch_input;
+  const utils = packages__fl_chart__src__utils__utils$46dart.src__utils__utils;
+  const text_style = packages__flutter__src__painting__strut_style$46dart.src__painting__text_style;
+  const custom_paint = packages__flutter__src__rendering__custom_paint$46dart.src__rendering__custom_paint;
+  var base_chart_data = Object.create(dart.library);
+  var base_chart_painter = Object.create(dart.library);
+  var ObjectL = () => (ObjectL = dart.constFn(dart.legacy(core.Object)))();
+  var JSArrayOfObjectL = () => (JSArrayOfObjectL = dart.constFn(_interceptors.JSArray$(ObjectL())))();
+  const CT = Object.create(null);
+  var L0 = "package:fl_chart/src/chart/base/base_chart/base_chart_data.dart";
+  var L1 = "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/fl_chart-0.12.1/lib/src/chart/base/base_chart/base_chart_data.dart";
+  var L2 = "package:fl_chart/src/chart/base/base_chart/base_chart_painter.dart";
+  dart.defineLazy(CT, {
+    get C1() {
+      return C1 = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4278190080.0
+      });
+    },
+    get C0() {
+      return C0 = dart.const({
+        __proto__: text_style.TextStyle.prototype,
+        [TextStyle_fontFeatures]: null,
+        [TextStyle_shadows]: null,
+        [TextStyle_debugLabel]: null,
+        [TextStyle_decorationThickness]: null,
+        [TextStyle_decorationStyle]: null,
+        [TextStyle_decorationColor]: null,
+        [TextStyle_decoration]: null,
+        [TextStyle_background]: null,
+        [TextStyle_foreground]: null,
+        [TextStyle_locale]: null,
+        [TextStyle_height]: null,
+        [TextStyle_textBaseline]: null,
+        [TextStyle_wordSpacing]: null,
+        [TextStyle_letterSpacing]: null,
+        [TextStyle_fontStyle]: null,
+        [TextStyle_fontWeight]: null,
+        [TextStyle_fontSize]: 11,
+        [TextStyle__package]: null,
+        [TextStyle__fontFamilyFallback]: null,
+        [TextStyle_fontFamily]: null,
+        [TextStyle_backgroundColor]: null,
+        [TextStyle_color]: C1 || CT.C1,
+        [TextStyle_inherit]: true
+      });
+    }
+  }, false);
+  var borderData$ = dart.privateName(base_chart_data, "BaseChartData.borderData");
+  var touchData$ = dart.privateName(base_chart_data, "BaseChartData.touchData");
+  const Object_EquatableMixin$36 = class Object_EquatableMixin extends core.Object {};
+  (Object_EquatableMixin$36.new = function() {
+  }).prototype = Object_EquatableMixin$36.prototype;
+  dart.applyMixin(Object_EquatableMixin$36, equatable_mixin.EquatableMixin);
+  base_chart_data.BaseChartData = class BaseChartData extends Object_EquatableMixin$36 {
+    get borderData() {
+      return this[borderData$];
+    }
+    set borderData(value) {
+      this[borderData$] = value;
+    }
+    get touchData() {
+      return this[touchData$];
+    }
+    set touchData(value) {
+      this[touchData$] = value;
+    }
+    get props() {
+      return JSArrayOfObjectL().of([this.borderData, this.touchData]);
+    }
+  };
+  (base_chart_data.BaseChartData.new = function(opts) {
+    let t0;
+    let borderData = opts && 'borderData' in opts ? opts.borderData : null;
+    let touchData = opts && 'touchData' in opts ? opts.touchData : null;
+    this[borderData$] = (t0 = borderData, t0 == null ? new base_chart_data.FlBorderData.new() : t0);
+    this[touchData$] = touchData;
+    ;
+  }).prototype = base_chart_data.BaseChartData.prototype;
+  dart.addTypeTests(base_chart_data.BaseChartData);
+  dart.addTypeCaches(base_chart_data.BaseChartData);
+  dart.setGetterSignature(base_chart_data.BaseChartData, () => ({
+    __proto__: dart.getGetters(base_chart_data.BaseChartData.__proto__),
+    props: dart.legacy(core.List$(dart.legacy(core.Object)))
+  }));
+  dart.setLibraryUri(base_chart_data.BaseChartData, L0);
+  dart.setFieldSignature(base_chart_data.BaseChartData, () => ({
+    __proto__: dart.getFields(base_chart_data.BaseChartData.__proto__),
+    borderData: dart.fieldType(dart.legacy(base_chart_data.FlBorderData)),
+    touchData: dart.fieldType(dart.legacy(base_chart_data.FlTouchData))
+  }));
+  var show$ = dart.privateName(base_chart_data, "FlBorderData.show");
+  var border$ = dart.privateName(base_chart_data, "FlBorderData.border");
+  const Object_EquatableMixin$36$ = class Object_EquatableMixin extends core.Object {};
+  (Object_EquatableMixin$36$.new = function() {
+  }).prototype = Object_EquatableMixin$36$.prototype;
+  dart.applyMixin(Object_EquatableMixin$36$, equatable_mixin.EquatableMixin);
+  base_chart_data.FlBorderData = class FlBorderData extends Object_EquatableMixin$36$ {
+    get show() {
+      return this[show$];
+    }
+    set show(value) {
+      super.show = value;
+    }
+    get border() {
+      return this[border$];
+    }
+    set border(value) {
+      this[border$] = value;
+    }
+    static lerp(a, b, t) {
+      if (!(a != null && b != null && t != null)) dart.assertFailed(null, L1, 57, 12, "a != null && b != null && t != null");
+      return new base_chart_data.FlBorderData.new({show: b.show, border: box_border.Border.lerp(a.border, b.border, t)});
+    }
+    get props() {
+      return JSArrayOfObjectL().of([this.show, this.border]);
+    }
+  };
+  (base_chart_data.FlBorderData.new = function(opts) {
+    let t0, t0$;
+    let show = opts && 'show' in opts ? opts.show : null;
+    let border = opts && 'border' in opts ? opts.border : null;
+    this[show$] = (t0 = show, t0 == null ? true : t0);
+    this[border$] = (t0$ = border, t0$ == null ? box_border.Border.all({color: colors.Colors.black, width: 1.0, style: borders.BorderStyle.solid}) : t0$);
+    ;
+  }).prototype = base_chart_data.FlBorderData.prototype;
+  dart.addTypeTests(base_chart_data.FlBorderData);
+  dart.addTypeCaches(base_chart_data.FlBorderData);
+  dart.setGetterSignature(base_chart_data.FlBorderData, () => ({
+    __proto__: dart.getGetters(base_chart_data.FlBorderData.__proto__),
+    props: dart.legacy(core.List$(dart.legacy(core.Object)))
+  }));
+  dart.setLibraryUri(base_chart_data.FlBorderData, L0);
+  dart.setFieldSignature(base_chart_data.FlBorderData, () => ({
+    __proto__: dart.getFields(base_chart_data.FlBorderData.__proto__),
+    show: dart.finalFieldType(dart.legacy(core.bool)),
+    border: dart.fieldType(dart.legacy(box_border.Border))
+  }));
+  var enabled$ = dart.privateName(base_chart_data, "FlTouchData.enabled");
+  const Object_EquatableMixin$36$0 = class Object_EquatableMixin extends core.Object {};
+  (Object_EquatableMixin$36$0.new = function() {
+  }).prototype = Object_EquatableMixin$36$0.prototype;
+  dart.applyMixin(Object_EquatableMixin$36$0, equatable_mixin.EquatableMixin);
+  base_chart_data.FlTouchData = class FlTouchData extends Object_EquatableMixin$36$0 {
+    get enabled() {
+      return this[enabled$];
+    }
+    set enabled(value) {
+      super.enabled = value;
+    }
+    get props() {
+      return JSArrayOfObjectL().of([this.enabled]);
+    }
+  };
+  (base_chart_data.FlTouchData.new = function(enabled) {
+    this[enabled$] = enabled;
+    ;
+  }).prototype = base_chart_data.FlTouchData.prototype;
+  dart.addTypeTests(base_chart_data.FlTouchData);
+  dart.addTypeCaches(base_chart_data.FlTouchData);
+  dart.setGetterSignature(base_chart_data.FlTouchData, () => ({
+    __proto__: dart.getGetters(base_chart_data.FlTouchData.__proto__),
+    props: dart.legacy(core.List$(dart.legacy(core.Object)))
+  }));
+  dart.setLibraryUri(base_chart_data.FlTouchData, L0);
+  dart.setFieldSignature(base_chart_data.FlTouchData, () => ({
+    __proto__: dart.getFields(base_chart_data.FlTouchData.__proto__),
+    enabled: dart.finalFieldType(dart.legacy(core.bool))
+  }));
+  var top$ = dart.privateName(base_chart_data, "FlClipData.top");
+  var bottom$ = dart.privateName(base_chart_data, "FlClipData.bottom");
+  var left$ = dart.privateName(base_chart_data, "FlClipData.left");
+  var right$ = dart.privateName(base_chart_data, "FlClipData.right");
+  const Object_EquatableMixin$36$1 = class Object_EquatableMixin extends core.Object {};
+  (Object_EquatableMixin$36$1.new = function() {
+  }).prototype = Object_EquatableMixin$36$1.prototype;
+  dart.applyMixin(Object_EquatableMixin$36$1, equatable_mixin.EquatableMixin);
+  base_chart_data.FlClipData = class FlClipData extends Object_EquatableMixin$36$1 {
+    get top() {
+      return this[top$];
+    }
+    set top(value) {
+      super.top = value;
+    }
+    get bottom() {
+      return this[bottom$];
+    }
+    set bottom(value) {
+      super.bottom = value;
+    }
+    get left() {
+      return this[left$];
+    }
+    set left(value) {
+      super.left = value;
+    }
+    get right() {
+      return this[right$];
+    }
+    set right(value) {
+      super.right = value;
+    }
+    get any() {
+      return dart.test(this.top) || dart.test(this.bottom) || dart.test(this.left) || dart.test(this.right);
+    }
+    get props() {
+      return JSArrayOfObjectL().of([this.top, this.bottom, this.left, this.right]);
+    }
+  };
+  (base_chart_data.FlClipData.new = function(opts) {
+    let top = opts && 'top' in opts ? opts.top : null;
+    let bottom = opts && 'bottom' in opts ? opts.bottom : null;
+    let left = opts && 'left' in opts ? opts.left : null;
+    let right = opts && 'right' in opts ? opts.right : null;
+    this[top$] = top;
+    this[bottom$] = bottom;
+    this[left$] = left;
+    this[right$] = right;
+    ;
+  }).prototype = base_chart_data.FlClipData.prototype;
+  (base_chart_data.FlClipData.all = function() {
+    base_chart_data.FlClipData.new.call(this, {top: true, bottom: true, left: true, right: true});
+  }).prototype = base_chart_data.FlClipData.prototype;
+  (base_chart_data.FlClipData.vertical = function() {
+    base_chart_data.FlClipData.new.call(this, {top: true, bottom: true, left: false, right: false});
+  }).prototype = base_chart_data.FlClipData.prototype;
+  (base_chart_data.FlClipData.horizontal = function() {
+    base_chart_data.FlClipData.new.call(this, {top: false, bottom: false, left: true, right: true});
+  }).prototype = base_chart_data.FlClipData.prototype;
+  (base_chart_data.FlClipData.none = function() {
+    base_chart_data.FlClipData.new.call(this, {top: false, bottom: false, left: false, right: false});
+  }).prototype = base_chart_data.FlClipData.prototype;
+  dart.addTypeTests(base_chart_data.FlClipData);
+  dart.addTypeCaches(base_chart_data.FlClipData);
+  dart.setGetterSignature(base_chart_data.FlClipData, () => ({
+    __proto__: dart.getGetters(base_chart_data.FlClipData.__proto__),
+    any: dart.legacy(core.bool),
+    props: dart.legacy(core.List$(dart.legacy(core.Object)))
+  }));
+  dart.setLibraryUri(base_chart_data.FlClipData, L0);
+  dart.setFieldSignature(base_chart_data.FlClipData, () => ({
+    __proto__: dart.getFields(base_chart_data.FlClipData.__proto__),
+    top: dart.finalFieldType(dart.legacy(core.bool)),
+    bottom: dart.finalFieldType(dart.legacy(core.bool)),
+    left: dart.finalFieldType(dart.legacy(core.bool)),
+    right: dart.finalFieldType(dart.legacy(core.bool))
+  }));
+  var touchInput$ = dart.privateName(base_chart_data, "BaseTouchResponse.touchInput");
+  const Object_EquatableMixin$36$2 = class Object_EquatableMixin extends core.Object {};
+  (Object_EquatableMixin$36$2.new = function() {
+  }).prototype = Object_EquatableMixin$36$2.prototype;
+  dart.applyMixin(Object_EquatableMixin$36$2, equatable_mixin.EquatableMixin);
+  base_chart_data.BaseTouchResponse = class BaseTouchResponse extends Object_EquatableMixin$36$2 {
+    get touchInput() {
+      return this[touchInput$];
+    }
+    set touchInput(value) {
+      super.touchInput = value;
+    }
+    get props() {
+      return JSArrayOfObjectL().of([this.touchInput]);
+    }
+  };
+  (base_chart_data.BaseTouchResponse.new = function(touchInput) {
+    this[touchInput$] = touchInput;
+    ;
+  }).prototype = base_chart_data.BaseTouchResponse.prototype;
+  dart.addTypeTests(base_chart_data.BaseTouchResponse);
+  dart.addTypeCaches(base_chart_data.BaseTouchResponse);
+  dart.setGetterSignature(base_chart_data.BaseTouchResponse, () => ({
+    __proto__: dart.getGetters(base_chart_data.BaseTouchResponse.__proto__),
+    props: dart.legacy(core.List$(dart.legacy(core.Object)))
+  }));
+  dart.setLibraryUri(base_chart_data.BaseTouchResponse, L0);
+  dart.setFieldSignature(base_chart_data.BaseTouchResponse, () => ({
+    __proto__: dart.getFields(base_chart_data.BaseTouchResponse.__proto__),
+    touchInput: dart.finalFieldType(dart.legacy(touch_input.FlTouchInput))
+  }));
+  var TextStyle_fontFeatures = dart.privateName(text_style, "TextStyle.fontFeatures");
+  var TextStyle_shadows = dart.privateName(text_style, "TextStyle.shadows");
+  var TextStyle_debugLabel = dart.privateName(text_style, "TextStyle.debugLabel");
+  var TextStyle_decorationThickness = dart.privateName(text_style, "TextStyle.decorationThickness");
+  var TextStyle_decorationStyle = dart.privateName(text_style, "TextStyle.decorationStyle");
+  var TextStyle_decorationColor = dart.privateName(text_style, "TextStyle.decorationColor");
+  var TextStyle_decoration = dart.privateName(text_style, "TextStyle.decoration");
+  var TextStyle_background = dart.privateName(text_style, "TextStyle.background");
+  var TextStyle_foreground = dart.privateName(text_style, "TextStyle.foreground");
+  var TextStyle_locale = dart.privateName(text_style, "TextStyle.locale");
+  var TextStyle_height = dart.privateName(text_style, "TextStyle.height");
+  var TextStyle_textBaseline = dart.privateName(text_style, "TextStyle.textBaseline");
+  var TextStyle_wordSpacing = dart.privateName(text_style, "TextStyle.wordSpacing");
+  var TextStyle_letterSpacing = dart.privateName(text_style, "TextStyle.letterSpacing");
+  var TextStyle_fontStyle = dart.privateName(text_style, "TextStyle.fontStyle");
+  var TextStyle_fontWeight = dart.privateName(text_style, "TextStyle.fontWeight");
+  var TextStyle_fontSize = dart.privateName(text_style, "TextStyle.fontSize");
+  var TextStyle__package = dart.privateName(text_style, "TextStyle._package");
+  var TextStyle__fontFamilyFallback = dart.privateName(text_style, "TextStyle._fontFamilyFallback");
+  var TextStyle_fontFamily = dart.privateName(text_style, "TextStyle.fontFamily");
+  var TextStyle_backgroundColor = dart.privateName(text_style, "TextStyle.backgroundColor");
+  var Color_value = dart.privateName(ui, "Color.value");
+  var C1;
+  var TextStyle_color = dart.privateName(text_style, "TextStyle.color");
+  var TextStyle_inherit = dart.privateName(text_style, "TextStyle.inherit");
+  var C0;
+  base_chart_data.defaultGetTitle = function defaultGetTitle(value) {
+    return utils.formatNumber(value);
+  };
+  base_chart_data.defaultGetTitleTextStyle = function defaultGetTitleTextStyle(value) {
+    return C0 || CT.C0;
+  };
+  var _borderPaint = dart.privateName(base_chart_painter, "_borderPaint");
+  var _drawViewBorder = dart.privateName(base_chart_painter, "_drawViewBorder");
+  const _is_BaseChartPainter_default = Symbol('_is_BaseChartPainter_default');
+  var data$ = dart.privateName(base_chart_painter, "BaseChartPainter.data");
+  var targetData$ = dart.privateName(base_chart_painter, "BaseChartPainter.targetData");
+  var textScale$ = dart.privateName(base_chart_painter, "BaseChartPainter.textScale");
+  base_chart_painter.BaseChartPainter$ = dart.generic(D => {
+    class BaseChartPainter extends custom_paint.CustomPainter {
+      get data() {
+        return this[data$];
+      }
+      set data(value) {
+        super.data = value;
+      }
+      get targetData() {
+        return this[targetData$];
+      }
+      set targetData(value) {
+        super.targetData = value;
+      }
+      get textScale() {
+        return this[textScale$];
+      }
+      set textScale(value) {
+        this[textScale$] = value;
+      }
+      paint(canvas, size) {
+        this[_drawViewBorder](canvas, size);
+      }
+      [_drawViewBorder](canvas, viewSize) {
+        if (!dart.test(this.data.borderData.show)) {
+          return;
+        }
+        let chartViewSize = this.getChartUsableDrawSize(viewSize);
+        let topLeft = new ui.Offset.new(this.getLeftOffsetDrawSize(), this.getTopOffsetDrawSize());
+        let topRight = new ui.Offset.new(dart.notNull(this.getLeftOffsetDrawSize()) + dart.notNull(chartViewSize.width), this.getTopOffsetDrawSize());
+        let bottomLeft = new ui.Offset.new(this.getLeftOffsetDrawSize(), dart.notNull(this.getTopOffsetDrawSize()) + dart.notNull(chartViewSize.height));
+        let bottomRight = new ui.Offset.new(dart.notNull(this.getLeftOffsetDrawSize()) + dart.notNull(chartViewSize.width), dart.notNull(this.getTopOffsetDrawSize()) + dart.notNull(chartViewSize.height));
+        let topBorder = this.data.borderData.border.top;
+        if (topBorder.width !== 0.0) {
+          this[_borderPaint].color = topBorder.color;
+          this[_borderPaint].strokeWidth = topBorder.width;
+          canvas.drawLine(topLeft, topRight, this[_borderPaint]);
+        }
+        let rightBorder = this.data.borderData.border.right;
+        if (rightBorder.width !== 0.0) {
+          this[_borderPaint].color = rightBorder.color;
+          this[_borderPaint].strokeWidth = rightBorder.width;
+          canvas.drawLine(topRight, bottomRight, this[_borderPaint]);
+        }
+        let bottomBorder = this.data.borderData.border.bottom;
+        if (bottomBorder.width !== 0.0) {
+          this[_borderPaint].color = bottomBorder.color;
+          this[_borderPaint].strokeWidth = bottomBorder.width;
+          canvas.drawLine(bottomRight, bottomLeft, this[_borderPaint]);
+        }
+        let leftBorder = this.data.borderData.border.left;
+        if (leftBorder.width !== 0.0) {
+          this[_borderPaint].color = leftBorder.color;
+          this[_borderPaint].strokeWidth = leftBorder.width;
+          canvas.drawLine(bottomLeft, topLeft, this[_borderPaint]);
+        }
+      }
+      getChartUsableDrawSize(viewSize) {
+        let usableWidth = dart.notNull(viewSize.width) - dart.notNull(this.getExtraNeededHorizontalSpace());
+        let usableHeight = dart.notNull(viewSize.height) - dart.notNull(this.getExtraNeededVerticalSpace());
+        return new ui.Size.new(usableWidth, usableHeight);
+      }
+      getExtraNeededHorizontalSpace() {
+        return 0.0;
+      }
+      getExtraNeededVerticalSpace() {
+        return 0.0;
+      }
+      getLeftOffsetDrawSize() {
+        return 0.0;
+      }
+      getTopOffsetDrawSize() {
+        return 0.0;
+      }
+    }
+    (BaseChartPainter.new = function(data, targetData, opts) {
+      let t0;
+      let textScale = opts && 'textScale' in opts ? opts.textScale : 1;
+      this[_borderPaint] = null;
+      this[data$] = data;
+      this[targetData$] = targetData;
+      this[textScale$] = textScale;
+      BaseChartPainter.__proto__.new.call(this);
+      this[_borderPaint] = (t0 = ui.Paint.new(), (() => {
+        t0.style = ui.PaintingStyle.stroke;
+        return t0;
+      })());
+    }).prototype = BaseChartPainter.prototype;
+    dart.addTypeTests(BaseChartPainter);
+    BaseChartPainter.prototype[_is_BaseChartPainter_default] = true;
+    dart.addTypeCaches(BaseChartPainter);
+    dart.setMethodSignature(BaseChartPainter, () => ({
+      __proto__: dart.getMethods(BaseChartPainter.__proto__),
+      paint: dart.fnType(dart.void, [dart.legacy(ui.Canvas), dart.legacy(ui.Size)]),
+      [_drawViewBorder]: dart.fnType(dart.void, [dart.legacy(ui.Canvas), dart.legacy(ui.Size)]),
+      getChartUsableDrawSize: dart.fnType(dart.legacy(ui.Size), [dart.legacy(ui.Size)]),
+      getExtraNeededHorizontalSpace: dart.fnType(dart.legacy(core.double), []),
+      getExtraNeededVerticalSpace: dart.fnType(dart.legacy(core.double), []),
+      getLeftOffsetDrawSize: dart.fnType(dart.legacy(core.double), []),
+      getTopOffsetDrawSize: dart.fnType(dart.legacy(core.double), [])
+    }));
+    dart.setLibraryUri(BaseChartPainter, L2);
+    dart.setFieldSignature(BaseChartPainter, () => ({
+      __proto__: dart.getFields(BaseChartPainter.__proto__),
+      data: dart.finalFieldType(dart.legacy(D)),
+      targetData: dart.finalFieldType(dart.legacy(D)),
+      [_borderPaint]: dart.fieldType(dart.legacy(ui.Paint)),
+      textScale: dart.fieldType(dart.legacy(core.double))
+    }));
+    return BaseChartPainter;
+  });
+  base_chart_painter.BaseChartPainter = base_chart_painter.BaseChartPainter$();
+  dart.addTypeTests(base_chart_painter.BaseChartPainter, _is_BaseChartPainter_default);
+  const _is_TouchHandler_default = Symbol('_is_TouchHandler_default');
+  base_chart_painter.TouchHandler$ = dart.generic(T => {
+    class TouchHandler extends core.Object {}
+    TouchHandler[dart.mixinOn] = Object => class TouchHandler extends Object {
+      handleTouch(touchInput, size) {
+        return dart.throw(new core.UnsupportedError.new("not implemented"));
+      }
+    };
+    (TouchHandler[dart.mixinNew] = function() {
+    }).prototype = TouchHandler.prototype;
+    dart.addTypeTests(TouchHandler);
+    TouchHandler.prototype[_is_TouchHandler_default] = true;
+    dart.addTypeCaches(TouchHandler);
+    TouchHandler[dart.implements] = () => [core.Object];
+    dart.setMethodSignature(TouchHandler, () => ({
+      __proto__: dart.getMethods(TouchHandler.__proto__),
+      handleTouch: dart.fnType(dart.legacy(T), [dart.legacy(touch_input.FlTouchInput), dart.legacy(ui.Size)])
+    }));
+    dart.setLibraryUri(TouchHandler, L2);
+    return TouchHandler;
+  });
+  base_chart_painter.TouchHandler = base_chart_painter.TouchHandler$();
+  dart.addTypeTests(base_chart_painter.TouchHandler, _is_TouchHandler_default);
+  dart.trackLibraries("packages/fl_chart/src/chart/base/base_chart/base_chart_data.dart", {
+    "package:fl_chart/src/chart/base/base_chart/base_chart_data.dart": base_chart_data,
+    "package:fl_chart/src/chart/base/base_chart/base_chart_painter.dart": base_chart_painter
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["base_chart_data.dart","base_chart_painter.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../../../L:/packages/fl_chart/src/chart/base/base_chart/base_chart_data.dart.lib.js"}');
+  // Exports:
+  return {
+    src__chart__base__base_chart__base_chart_data: base_chart_data,
+    src__chart__base__base_chart__base_chart_painter: base_chart_painter
+  };
+}));
+
+//# sourceMappingURL=base_chart_data.dart.lib.js.map

@@ -1,0 +1,306 @@
+define(['dart_sdk', 'packages/spocs/Model/plant_info.dart', 'packages/flutter/src/widgets/single_child_scroll_view.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/spocs/home/component/headerbox.dart', 'packages/spocs/home/component/title_with_button_more.dart', 'packages/spocs/home/component/show_oxi.dart', 'packages/spocs/home/component/list_plant_card.dart', 'packages/spocs/home/component/list_view_moisture.dart'], (function load__packages__spocs__home__component__body_dart(dart_sdk, packages__spocs__Model__plant_info$46dart, packages__flutter__src__widgets__single_child_scroll_view$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__spocs__home__component__headerbox$46dart, packages__spocs__home__component__title_with_button_more$46dart, packages__spocs__home__component__show_oxi$46dart, packages__spocs__home__component__list_plant_card$46dart, packages__spocs__home__component__list_view_moisture$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const _interceptors = dart_sdk._interceptors;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const plant_info = packages__spocs__Model__plant_info$46dart.Model__plant_info;
+  const single_child_scroll_view = packages__flutter__src__widgets__single_child_scroll_view$46dart.src__widgets__single_child_scroll_view;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const container = packages__flutter__src__widgets__widget_span$46dart.src__widgets__container;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const headerbox = packages__spocs__home__component__headerbox$46dart.home__component__headerbox;
+  const title_with_button_more = packages__spocs__home__component__title_with_button_more$46dart.home__component__title_with_button_more;
+  const show_oxi = packages__spocs__home__component__show_oxi$46dart.home__component__show_oxi;
+  const list_plant_card = packages__spocs__home__component__list_plant_card$46dart.home__component__list_plant_card;
+  const list_view_moisture = packages__spocs__home__component__list_view_moisture$46dart.home__component__list_view_moisture;
+  var body = Object.create(dart.library);
+  var PlantInfoL = () => (PlantInfoL = dart.constFn(dart.legacy(plant_info.PlantInfo)))();
+  var JSArrayOfPlantInfoL = () => (JSArrayOfPlantInfoL = dart.constFn(_interceptors.JSArray$(PlantInfoL())))();
+  var _LocationL = () => (_LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))();
+  var WidgetL = () => (WidgetL = dart.constFn(dart.legacy(framework.Widget)))();
+  var JSArrayOfWidgetL = () => (JSArrayOfWidgetL = dart.constFn(_interceptors.JSArray$(WidgetL())))();
+  const CT = Object.create(null);
+  var L0 = "package:spocs/home/component/body.dart";
+  dart.defineLazy(CT, {
+    get C1() {
+      return C1 = dart.constList([], _LocationL());
+    },
+    get C0() {
+      return C0 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C1 || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 114,
+        [_Location_file]: "file:///L:/Work/Logistic/spocs/lib/home/component/body.dart"
+      });
+    },
+    get C4() {
+      return C4 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 13,
+        [_Location_line]: 116,
+        [_Location_file]: null
+      });
+    },
+    get C3() {
+      return C3 = dart.constList([C4 || CT.C4], _LocationL());
+    },
+    get C2() {
+      return C2 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C3 || CT.C3,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 115,
+        [_Location_file]: "file:///L:/Work/Logistic/spocs/lib/home/component/body.dart"
+      });
+    },
+    get C5() {
+      return C5 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C1 || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 118,
+        [_Location_file]: "file:///L:/Work/Logistic/spocs/lib/home/component/body.dart"
+      });
+    },
+    get C8() {
+      return C8 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 13,
+        [_Location_line]: 120,
+        [_Location_file]: null
+      });
+    },
+    get C7() {
+      return C7 = dart.constList([C8 || CT.C8], _LocationL());
+    },
+    get C6() {
+      return C6 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C7 || CT.C7,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 119,
+        [_Location_file]: "file:///L:/Work/Logistic/spocs/lib/home/component/body.dart"
+      });
+    },
+    get C11() {
+      return C11 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "plantInfo",
+        [_Location_column]: 13,
+        [_Location_line]: 123,
+        [_Location_file]: null
+      });
+    },
+    get C10() {
+      return C10 = dart.constList([C11 || CT.C11], _LocationL());
+    },
+    get C9() {
+      return C9 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C10 || CT.C10,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 122,
+        [_Location_file]: "file:///L:/Work/Logistic/spocs/lib/home/component/body.dart"
+      });
+    },
+    get C14() {
+      return C14 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 13,
+        [_Location_line]: 126,
+        [_Location_file]: null
+      });
+    },
+    get C13() {
+      return C13 = dart.constList([C14 || CT.C14], _LocationL());
+    },
+    get C12() {
+      return C12 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C13 || CT.C13,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 125,
+        [_Location_file]: "file:///L:/Work/Logistic/spocs/lib/home/component/body.dart"
+      });
+    },
+    get C17() {
+      return C17 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "planInfo",
+        [_Location_column]: 13,
+        [_Location_line]: 129,
+        [_Location_file]: null
+      });
+    },
+    get C16() {
+      return C16 = dart.constList([C17 || CT.C17], _LocationL());
+    },
+    get C15() {
+      return C15 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C16 || CT.C16,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 128,
+        [_Location_file]: "file:///L:/Work/Logistic/spocs/lib/home/component/body.dart"
+      });
+    },
+    get C20() {
+      return C20 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 13,
+        [_Location_line]: 132,
+        [_Location_file]: null
+      });
+    },
+    get C19() {
+      return C19 = dart.constList([C20 || CT.C20], _LocationL());
+    },
+    get C18() {
+      return C18 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C19 || CT.C19,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 131,
+        [_Location_file]: "file:///L:/Work/Logistic/spocs/lib/home/component/body.dart"
+      });
+    },
+    get C23() {
+      return C23 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 9,
+        [_Location_line]: 113,
+        [_Location_file]: null
+      });
+    },
+    get C22() {
+      return C22 = dart.constList([C23 || CT.C23], _LocationL());
+    },
+    get C21() {
+      return C21 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C22 || CT.C22,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 112,
+        [_Location_file]: "file:///L:/Work/Logistic/spocs/lib/home/component/body.dart"
+      });
+    },
+    get C26() {
+      return C26 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 112,
+        [_Location_file]: null
+      });
+    },
+    get C25() {
+      return C25 = dart.constList([C26 || CT.C26], _LocationL());
+    },
+    get C24() {
+      return C24 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C25 || CT.C25,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 111,
+        [_Location_file]: "file:///L:/Work/Logistic/spocs/lib/home/component/body.dart"
+      });
+    }
+  }, false);
+  var C1;
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  var C0;
+  var C4;
+  var C3;
+  var C2;
+  var C5;
+  var C8;
+  var C7;
+  var C6;
+  var C11;
+  var C10;
+  var C9;
+  var C14;
+  var C13;
+  var C12;
+  var C17;
+  var C16;
+  var C15;
+  var C20;
+  var C19;
+  var C18;
+  var C23;
+  var C22;
+  var C21;
+  var C26;
+  var C25;
+  var C24;
+  var planInfo = dart.privateName(body, "Body.planInfo");
+  body.Body = class Body extends framework.StatelessWidget {
+    get planInfo() {
+      return this[planInfo];
+    }
+    set planInfo(value) {
+      this[planInfo] = value;
+    }
+    build(context) {
+      return new single_child_scroll_view.SingleChildScrollView.new({child: new basic.Column.new({children: JSArrayOfWidgetL().of([new headerbox.HeaderBox.new({$creationLocationd_0dea112b090073317d4: C0 || CT.C0}), new title_with_button_more.TittleWithButtonMore.new({title: "Nồng độ Oxi", $creationLocationd_0dea112b090073317d4: C2 || CT.C2}), new show_oxi.ShowOxi.new({$creationLocationd_0dea112b090073317d4: C5 || CT.C5}), new title_with_button_more.TittleWithButtonMore.new({title: "Cây được chăm sóc", $creationLocationd_0dea112b090073317d4: C6 || CT.C6}), new list_plant_card.ListPlant.new({plantInfo: this.planInfo, $creationLocationd_0dea112b090073317d4: C9 || CT.C9}), new title_with_button_more.TittleWithButtonMore.new({title: "Độ ẩm", $creationLocationd_0dea112b090073317d4: C12 || CT.C12}), new list_view_moisture.ListViewMoisture.new({planInfo: this.planInfo, $creationLocationd_0dea112b090073317d4: C15 || CT.C15}), new container.Container.new({height: 120.0, $creationLocationd_0dea112b090073317d4: C18 || CT.C18})]), $creationLocationd_0dea112b090073317d4: C21 || CT.C21}), $creationLocationd_0dea112b090073317d4: C24 || CT.C24});
+    }
+  };
+  (body.Body.new = function(opts) {
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[planInfo] = JSArrayOfPlantInfoL().of([new plant_info.PlantInfo.new({image: "assets/images/img_cayluoiho.jpg", name: "Lưỡi Hổ", id: "D3S2", price: 25, mois: 25.0, detail: " là giống cây phong cảnh xếp ở thứ 15 trong Top 20 cây cảnh văn phòng tốt nhất. Với hình ảnh xanh mát và khỏe khoắn “Lưỡi Hổ” giúp mọi người giảm stress rất tốt. Hoặc là cải thiện những điều xui xẻo sẽ gặp trong công việc làm ăn."}), new plant_info.PlantInfo.new({image: "assets/images/img_caykimtien.jpg", name: "Kim Tiền", id: "D3D1", price: 15, mois: 30.0, detail: "Cây Kim Phát Tài (cây kim tiền) là loài cây nhỏ nhưng thân khỏe. Lá cây trơn tru mang vẻ tươi mới. Nếu như cây càng sống lâu vậy thì chúng cho thấy được công ty có xu hướng phát triển. Cây này có khả năng lọc không khí rất tốt, đặc biệt có tính phong thủy cao, cây này thường được đặt ở các góc nhỏ trong văn phòng. đặt ở bàn làm việc hoặc hành lang đi lại.Đặt một chậu Kim tiền trên bàn làm việc trong phòng máy lạnh giúp không gian xung quanh được ẩm hơi nước và tươi mới hơn, đồng thời thanh lọc không khí, khói bụi, vi khuẩn xung quanh phòng làm việc mang lại không khí trong lành cho mọi người. Đúng như ý nghĩa của cái tên: Kim tiền, trong phong thủy, cây Kim tiền mang đến tài lộc, may mắn, tiền tài, phú quý, giàu sang, sung túc, thịnh vượng cho người sỡ hữu. Đặc biệt, khi cây Kim tiền ra hoa chính là sự báo hiệu may mắn và thành công đang đến. Thuộc loại cây có lá kép dạng to, cuống lá ngắn, phiến lá xanh thẫm, sáng bóng và mọc đối xứng hai bên cọng lá. Các nhánh to khoẻ vươn lên cao, sống tốt cả trong môi trường thiếu ánh sáng và không khí. Cây Kim Tiền có tuổi thọ khá lâu và cũng khá dễ trồng. Vì vậy, nó được trồng nhiều trong các văn phòng làm việc."}), new plant_info.PlantInfo.new({image: "assets/images/img_cayconhat.jpg", name: "Bạch Mã Hoàng Tử", id: "D3A4", price: 2, mois: 45.0, detail: "Cây bạch mã hoàng tử có tác dụng thanh lọc và điều hòa không khí, độ ẩm, thích hợp trong điều kiện môi trường thường xuyên sử dụng máy lạnh. Cây bạch mã hoàng rất tốt để đặt trên bàn làm việc, không những tốt cho sức khỏe mà còn tạo ra cảm giác tươi xanh mát mắt, giảm stress và căng thẳng trong cuộc sống, công việc. Ngoài ra cây còn có ý nghĩa giúp cho người sở hữu nó phát triển con đường sự nghiệp nhanh chóng, thuận buồm xuôi gió và may mắn trong cuộc sống.  "}), new plant_info.PlantInfo.new({image: "assets/images/img_bangsingapo.jpg", name: "Bàng Singapo", id: "D3F3", price: 1, mois: 70.0, detail: "Cây bàng singapore có khả năng hút các khí độc trong không khí, duy trì độ ẩm, cung cấp oxy, rất tốt cho đối tượng làm việc trong văn phòng, khi phải thường xuyên tiếp xúc nhiều với bức xạ nhiệt từ máy tính gây ra rất có hại cho sức khỏe. Cây Bàng Singapore là cây cảnh phong thủy được nhiều người yêu thích bởi mang đến cho người trồng nhiều năng lượng tích cực. Bản thân cây mọc thẳng là biểu tượng của sự ngay thẳng, chính trực, cũng tượng trưng cho đức tính chịu khó và ý chí vươn lên trong cuộc sống."}), new plant_info.PlantInfo.new({image: "assets/images/img_caykimngan.jpg", name: "Kim Ngân", id: "D2F1", price: 1, mois: 45.0, detail: "Loài cây này không chỉ được ưa chuộng về nét đẹp tượng trưng cho Kim, Mộc, Thủy, Hỏa, Thổ. Mà bản thân nó còn đảm bảo được ý nghĩa phong thủy tốt cho các mệnh.Do vẻ đẹp độc lạ và ý nghĩa phong thủy mà cây có thể dùng làm quà tặng, trang trí làm đẹp cho không gian. Ngoài ra, cây còn có tác dụng đuổi muỗi rất tốt, thanh lọc không khí, góp phần đáng kể tạo ra không gian xanh mát, thư giãn. Người ta tin rằng nếu bạn đặt một cây cây kim ngân ở nơi tiếp xúc với các khu vực liên quan đến tiền, thì cây này sẽ mang lại may mắn và sinh sôi cho chủ sở hữu."}), new plant_info.PlantInfo.new({image: "assets/images/img_thietmoclan.jpg", name: "Thiết Mộc Lan", id: "A2R1", price: 1, mois: 80.0, detail: "Thiết Mộc Lan mang trong mình quan điểm phong thủy rất hoàn thiện. Ví dụ khi cây có 2 nhánh mang ý nghĩa về tình duyên, 3 nhánh mang lại sự hạnh phúc. Còn cây 5 nhánh mang đến sức khỏe, 8 nhánh thì về tài lộc và 9 nhánh thì về thời vận. Cây thiết mộc lan phù hợp với những không gian mát, thường xuyên sử dụng máy lạnh như: văn phòng hoặc phòng khách. Cây sẽ lọc không khí, giúp không gian nơi đó được trong lành hơn. Ngoài ra, cây còn có thể loại bỏ 1 số loại độc có trong không khí như: Cacbon monoxit (chất dễ bắt cháy, độc tính cao); benzene; toluene; formallhelyde;…Trong phong thủy, cây thiết mộc lan có ý nghĩa mang lại nhiều may mắn, tài lộc, tiền bạc cho chủ nhân. Đặc biệt, khi cây nở hoa là báo hiệu tiền tài sắp đến. "}), new plant_info.PlantInfo.new({image: "assets/images/img_cayphatloc.jpg", name: "Phát Lộc", id: "R2A3", price: 1, mois: 100.0, detail: "Có sức sống mạnh mẽ, rất dễ chăm sóc. Nó tự sinh tồn trong môi trường khắc nghiệt nhưng luôn giữ được dáng thẳng, hiên ngang, là một loại cây mang đến năng lượng dồi dào. Cây Phất Lộc còn tượng trưng cho sự may mắn, sức khoẻ và sự thịnh vượng. Đặt loại cây này trên bàn làm việc, người chủ sẽ nhận được nhiều sự may mắn cũng như có sức khoẻ dồi dào, sự nghiệp thăng tiến. Một điểm lưu ý nữa là khi mua cây Phát Lộc để đặt trong nhà hay văn phòng, bạn cũng nên chú ý đến việc mua số lượng cành/ cây như thế nào cho phù hợp. Theo đó, 2 cây tượng trưng cho tình yêu, 3 cây tượng trưng cho hạnh phúc – trường thọ – giàu có, 5 cây tượng trưng cho sức khoẻ – tinh thần – trí tuệ – tâm linh – trực giác, 8 cây tượng trưng cho sự phát triển và thịnh vượng, 9 cây tượng trưng cho may mắn…"}), new plant_info.PlantInfo.new({image: "assets/images/img_trucbachhop.jpg", name: "Trúc Bách Hợp", id: "Q2G3", price: 1, mois: 15.0, detail: "Theo NASA thì loại cây này có thể lọc bỏ nhiều khí độc, đem lại môi trường trong lành. Ngoài ra, cây còn được sử dụng để làm cây cảnh trang trí, cho không gian thêm sinh động, giải tỏa căng thẳng. Trong tự nhiên, cây còn là thảo dược chữa được nhiều loại bệnh. Cây Trúc bách hợp có rất nhiều ý nghĩa tốt đẹp. Từ lâu, ta đã biết 4 loài cây quý là Tùng – Cúc – Trúc – Mai, trong văn hóa phương Đông, Trúc có nghĩa là trời đất trường xuân, đại diện cho sự vĩnh cửu, trường tồn theo năm tháng. "}), new plant_info.PlantInfo.new({image: "assets/images/img_cayvanloc.jpg", name: "Vạn Lộc", id: "T4M1", price: 1, mois: 42.0, detail: "Cây Vạn Lộc hay còn gọi với tên khác là Cây Thiên Phú, thuộc họ thực vật Ráy. Cây có nguồn gốc từ Indonexia, Thái Lan. Vạn Lộc là cây dễ trồng, dễ chăm sóc. Cây mang ý nghĩa phong thủy tốt đem lại tài lộc, may mắn cho người sở hữu, gia chủ nên nó là cây cảnh rất được ưa thích hiện nay. Cây Vạn Lộc là cây dạng thân thảo mọc theo bụi, không phân cành và nhánh. Vạn Lộc có 2 loại là loại Vạn Lộc lá đỏ và Vạn Lộc lá xanh. Lá cây dày, bề mặt lá bóng có dạng hình trứng rộng. Đỉnh lá nhọn, mép lá nguyên lượn sóng. Lá mọc đan xen xếp từng tầng tròn quanh thân mang lại cảm giác cân đối và thu hút người nhìn. Vạn Lộc lá đỏ viền xanh, đốm hồng cà xanh khắp mặt lá tạo ấn tượng từ cái nhìn đầu tiên. Cây thường được trồng trong chậu nhỏ hoặc trong chậu chứa nước thủy sinh để trang trí bàn làm việc, của sổ, bàn ăn, phòng khách, cửa sổ… Ngoài có tác dụng làm đẹp cảnh quan xung quanh cây còn có ý nghĩa phong thủy tốt."}), new plant_info.PlantInfo.new({image: "assets/images/img_cayngocngan.jpg", name: "Ngọc Ngân", id: "K1I6", price: 1, mois: 12.0, detail: "Thích hợp trưng bày trên bàn làm việc, mang lại không gian xanh mát cho căn phòng. Thường xuyên tưới nước vào mùa hè.Trong môi trường khô, đặc biệt dễ bị bay hơi nước, vì vậy bạn cần tưới nước hầu như hàng ngày. Nên tưới cả lá cây giúp tăng cường sự hấp thụ các chất độc hại có trong không khí, đẩy nhanh quá trình quang hợp."}), new plant_info.PlantInfo.new({image: "assets/images/img_caytrauba.jpg", name: "Trầu Bà", id: "P2B1", price: 1, mois: 80.0, detail: "Cây Trầu Bà leo cột là loại cây thanh lọc không khí rất tốt. Cây có thể hấp thụ các khí độc: Aldehyde formic, monooxide de carbone, benzene, toluene, formallhelyde. Do đó, đây không chỉ là cây cảnh để trang trí mà còn rất tốt cho sức khỏe con người. Trầu bà leo cột có sức sống dẻo dai, mãnh liệt. Cũng vì thế người ta quan niệm cây thể hiện ý chí vươn lên không ngừng của người trồng. Cây Trầu Bà leo cột trong phong thủy cũng vì thế mà tượng trưng cho sự mạnh mẽ."}), new plant_info.PlantInfo.new({image: "assets/images/img_daiphugia.jpg", name: "Đại Phú Gia", id: "U2N1", price: 1, mois: 50.0, detail: "Do có hình dáng đẹp thích hợp trang trí nội thất, làm cây cảnh ở văn phòng, tiền sảnh… Ngoài ra, cây còn có tác dụng cân bằng không gian, độ ẩm, tạo sự xanh mát, thanh lọc không khí bảo vệ sức khỏe con người. Cây đại phú gia có ý nghĩa về mặt phong thủy giống như tên gọi của nó là đem lại tiền tài, sức khỏe phú quý cho gia chủ. Đặc biệt khi ra hoa có ý nghĩa rất lớn đó là thời điểm giúp cho gia chủ giàu sang, phú quý và gặp được nhiều may mắn hơn."})]);
+    body.Body.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = body.Body.prototype;
+  dart.addTypeTests(body.Body);
+  dart.addTypeCaches(body.Body);
+  dart.setMethodSignature(body.Body, () => ({
+    __proto__: dart.getMethods(body.Body.__proto__),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
+  }));
+  dart.setLibraryUri(body.Body, L0);
+  dart.setFieldSignature(body.Body, () => ({
+    __proto__: dart.getFields(body.Body.__proto__),
+    planInfo: dart.fieldType(dart.legacy(core.List$(dart.legacy(plant_info.PlantInfo))))
+  }));
+  dart.trackLibraries("packages/spocs/home/component/body.dart", {
+    "package:spocs/home/component/body.dart": body
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["body.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IASkB;;;;;;UAoGU;AACxB,YAAO,gEACE,gCACK,uBACR,oFACA,4DACS,sEAET,iFACA,4DACS,4EAET,8CACa,sEAEb,4DACS,kEAET,uDACY,wEAEZ,qCACU;IAKlB;;;;IA/HgB,iBAAW,0BACzB,qCACW,yCACD,eACF,eACG,UACD,cAEF,2OACR,qCACW,0CACD,gBACF,eACG,UACD,cAEF,upCACR,qCACW,yCACD,wBACF,eACG,SACD,cAEF,sdACR,qCACS,2CACD,oBACF,eACG,SACD,cAEF,+fAEN,qCACW,0CACD,gBACF,eACG,SACD,cAEF,6iBACR,qCACW,2CACD,qBACF,eACG,SACD,cAEF,+tBACR,qCACW,0CACD,gBACF,eACG,SACD,eAEF,ixBACR,qCACW,2CACD,qBACF,eACG,SACD,cAEF,gfACR,qCACW,yCACD,eACF,eACG,SACD,cAEF,u5BACR,qCACW,2CACD,iBACF,eACG,SACD,cAEF,2UACR,qCACW,yCACD,eACF,eACG,SACD,cAEF,6gBACR,qCACW,yCACD,mBACF,eACG,SACD,cAEF;;;EA+BZ","file":"../../../../../../packages/spocs/home/component/body.dart.lib.js"}');
+  // Exports:
+  return {
+    home__component__body: body
+  };
+}));
+
+//# sourceMappingURL=body.dart.lib.js.map

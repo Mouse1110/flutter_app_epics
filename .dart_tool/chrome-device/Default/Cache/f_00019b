@@ -1,0 +1,1014 @@
+define(['dart_sdk', 'packages/xml/src/xml/utils/node_type.dart', 'packages/xml/src/xml/entities/default_mapping.dart', 'packages/xml/src/xml_events/converters/list_converter.dart', 'packages/xml/src/xml/utils/simple_name.dart', 'packages/collection/src/equality.dart', 'packages/xml/src/xml/utils/attribute_type.dart', 'packages/convert/src/string_accumulator_sink.dart', 'packages/xml/src/xml/entities/entity_mapping.dart'], (function load__packages__xml__src__xml_events__events__text_dart(dart_sdk, packages__xml__src__xml__utils__node_type$46dart, packages__xml__src__xml__entities__default_mapping$46dart, packages__xml__src__xml_events__converters__list_converter$46dart, packages__xml__src__xml__utils__simple_name$46dart, packages__collection__src__equality$46dart, packages__xml__src__xml__utils__attribute_type$46dart, packages__convert__src__string_accumulator_sink$46dart, packages__xml__src__xml__entities__entity_mapping$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const _interceptors = dart_sdk._interceptors;
+  const convert = dart_sdk.convert;
+  const async = dart_sdk.async;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const node_type = packages__xml__src__xml__utils__node_type$46dart.src__xml__utils__node_type;
+  const default_mapping = packages__xml__src__xml__entities__default_mapping$46dart.src__xml__entities__default_mapping;
+  const list_converter = packages__xml__src__xml_events__converters__list_converter$46dart.src__xml_events__converters__list_converter;
+  const exceptions = packages__xml__src__xml__utils__simple_name$46dart.src__xml__utils__exceptions;
+  const equality = packages__collection__src__equality$46dart.src__equality;
+  const attribute_type = packages__xml__src__xml__utils__attribute_type$46dart.src__xml__utils__attribute_type;
+  const string_accumulator_sink = packages__convert__src__string_accumulator_sink$46dart.src__string_accumulator_sink;
+  const entity_mapping = packages__xml__src__xml__entities__entity_mapping$46dart.src__xml__entities__entity_mapping;
+  var text$ = Object.create(dart.library);
+  var processing = Object.create(dart.library);
+  var end_element = Object.create(dart.library);
+  var doctype = Object.create(dart.library);
+  var with_parent = Object.create(dart.library);
+  var parented = Object.create(dart.library);
+  var start_element = Object.create(dart.library);
+  var named = Object.create(dart.library);
+  var event_attribute = Object.create(dart.library);
+  var declaration = Object.create(dart.library);
+  var comment = Object.create(dart.library);
+  var visitor = Object.create(dart.library);
+  var cdata = Object.create(dart.library);
+  var event_encoder = Object.create(dart.library);
+  var event = Object.create(dart.library);
+  var $hashCode = dartx.hashCode;
+  var $toString = dartx.toString;
+  var $_equals = dartx._equals;
+  var $indexOf = dartx.indexOf;
+  var $substring = dartx.substring;
+  var $forEach = dartx.forEach;
+  var $isNotEmpty = dartx.isNotEmpty;
+  var XmlTextEventL = () => (XmlTextEventL = dart.constFn(dart.legacy(text$.XmlTextEvent)))();
+  var StringL = () => (StringL = dart.constFn(dart.legacy(core.String)))();
+  var XmlEventL = () => (XmlEventL = dart.constFn(dart.legacy(event.XmlEvent)))();
+  var JSArrayOfXmlEventL = () => (JSArrayOfXmlEventL = dart.constFn(_interceptors.JSArray$(XmlEventL())))();
+  var XmlProcessingEventL = () => (XmlProcessingEventL = dart.constFn(dart.legacy(processing.XmlProcessingEvent)))();
+  var XmlEndElementEventL = () => (XmlEndElementEventL = dart.constFn(dart.legacy(end_element.XmlEndElementEvent)))();
+  var XmlStartElementEventL = () => (XmlStartElementEventL = dart.constFn(dart.legacy(start_element.XmlStartElementEvent)))();
+  var XmlDoctypeEventL = () => (XmlDoctypeEventL = dart.constFn(dart.legacy(doctype.XmlDoctypeEvent)))();
+  var ListOfXmlEventL = () => (ListOfXmlEventL = dart.constFn(core.List$(XmlEventL())))();
+  var ListLOfXmlEventL = () => (ListLOfXmlEventL = dart.constFn(dart.legacy(ListOfXmlEventL())))();
+  var SinkOfListLOfXmlEventL = () => (SinkOfListLOfXmlEventL = dart.constFn(core.Sink$(ListLOfXmlEventL())))();
+  var SinkLOfListLOfXmlEventL = () => (SinkLOfListLOfXmlEventL = dart.constFn(dart.legacy(SinkOfListLOfXmlEventL())))();
+  var StreamOfListLOfXmlEventL = () => (StreamOfListLOfXmlEventL = dart.constFn(async.Stream$(ListLOfXmlEventL())))();
+  var StreamLOfListLOfXmlEventL = () => (StreamLOfListLOfXmlEventL = dart.constFn(dart.legacy(StreamOfListLOfXmlEventL())))();
+  var VoidToStreamLOfListLOfXmlEventL = () => (VoidToStreamLOfListLOfXmlEventL = dart.constFn(dart.fnType(StreamLOfListLOfXmlEventL(), [])))();
+  var DefaultEqualityOfNull = () => (DefaultEqualityOfNull = dart.constFn(equality.DefaultEquality$(core.Null)))();
+  var XmlEventAttributeL = () => (XmlEventAttributeL = dart.constFn(dart.legacy(event_attribute.XmlEventAttribute)))();
+  var XmlDeclarationEventL = () => (XmlDeclarationEventL = dart.constFn(dart.legacy(declaration.XmlDeclarationEvent)))();
+  var XmlCommentEventL = () => (XmlCommentEventL = dart.constFn(dart.legacy(comment.XmlCommentEvent)))();
+  var XmlCDATAEventL = () => (XmlCDATAEventL = dart.constFn(dart.legacy(cdata.XmlCDATAEvent)))();
+  var SinkOfStringL = () => (SinkOfStringL = dart.constFn(core.Sink$(StringL())))();
+  var SinkLOfStringL = () => (SinkLOfStringL = dart.constFn(dart.legacy(SinkOfStringL())))();
+  var StreamOfStringL = () => (StreamOfStringL = dart.constFn(async.Stream$(StringL())))();
+  var StreamLOfStringL = () => (StreamLOfStringL = dart.constFn(dart.legacy(StreamOfStringL())))();
+  var XmlEntityMappingL = () => (XmlEntityMappingL = dart.constFn(dart.legacy(entity_mapping.XmlEntityMapping)))();
+  var __ToStreamLOfStringL = () => (__ToStreamLOfStringL = dart.constFn(dart.fnType(StreamLOfStringL(), [], {entityMapping: XmlEntityMappingL()}, {})))();
+  const CT = Object.create(null);
+  var L13 = "package:xml/src/xml_events/events/cdata.dart";
+  var L14 = "package:xml/src/xml_events/converters/event_encoder.dart";
+  var L6 = "package:xml/src/xml_events/events/doctype.dart";
+  var L2 = "package:xml/src/xml_events/events/text.dart";
+  var L5 = "package:xml/src/xml_events/events/end_element.dart";
+  var L11 = "package:xml/src/xml_events/events/declaration.dart";
+  var L0 = "package:xml/src/xml_events/utils/parented.dart";
+  var L3 = "package:xml/src/xml_events/events/processing.dart";
+  var L10 = "package:xml/src/xml_events/utils/event_attribute.dart";
+  var L4 = "package:xml/src/xml_events/utils/named.dart";
+  var L12 = "package:xml/src/xml_events/events/comment.dart";
+  var L8 = "package:xml/src/xml_events/visitor.dart";
+  var L1 = "package:xml/src/xml_events/event.dart";
+  var L9 = "package:xml/src/xml_events/events/start_element.dart";
+  var L7 = "package:xml/src/xml_events/streams/with_parent.dart";
+  dart.defineLazy(CT, {
+    get C2() {
+      return C2 = dart.constMap(StringL(), StringL(), ["amp", "&", "apos", "'", "gt", ">", "lt", "<", "quot", "\""]);
+    },
+    get C1() {
+      return C1 = dart.const({
+        __proto__: default_mapping.XmlDefaultEntityMapping.prototype,
+        [XmlDefaultEntityMapping_entities]: C2 || CT.C2
+      });
+    },
+    get C0() {
+      return C0 = dart.const({
+        __proto__: event_encoder.XmlEventEncoder.prototype,
+        [XmlEventEncoder_entityMapping]: C1 || CT.C1
+      });
+    },
+    get C3() {
+      return C3 = dart.const({
+        __proto__: with_parent.XmlWithParentEvents.prototype
+      });
+    },
+    get C5() {
+      return C5 = dart.const({
+        __proto__: DefaultEqualityOfNull().prototype
+      });
+    },
+    get C4() {
+      return C4 = dart.const({
+        __proto__: equality.ListEquality.prototype,
+        [ListEquality__elementEquality]: C5 || CT.C5
+      });
+    }
+  }, false);
+  var C2;
+  var XmlDefaultEntityMapping_entities = dart.privateName(default_mapping, "XmlDefaultEntityMapping.entities");
+  var C1;
+  var XmlEventEncoder_entityMapping = dart.privateName(event_encoder, "XmlEventEncoder.entityMapping");
+  var C0;
+  var _parentEvent = dart.privateName(parented, "_parentEvent");
+  parented.XmlParented = class XmlParented extends core.Object {};
+  parented.XmlParented[dart.mixinOn] = Object => class XmlParented extends Object {
+    get parentEvent() {
+      return this[_parentEvent];
+    }
+    attachParentEvent(parentEvent) {
+      if (this[_parentEvent] != null) {
+        dart.throw(new core.StateError.new("Parent event already resolved."));
+      }
+      if (parentEvent != null) {
+        this[_parentEvent] = parentEvent;
+      }
+    }
+  };
+  (parented.XmlParented[dart.mixinNew] = function() {
+    this[_parentEvent] = null;
+  }).prototype = parented.XmlParented.prototype;
+  dart.addTypeTests(parented.XmlParented);
+  dart.addTypeCaches(parented.XmlParented);
+  parented.XmlParented[dart.implements] = () => [core.Object];
+  dart.setMethodSignature(parented.XmlParented, () => ({
+    __proto__: dart.getMethods(parented.XmlParented.__proto__),
+    attachParentEvent: dart.fnType(dart.void, [dart.legacy(start_element.XmlStartElementEvent)])
+  }));
+  dart.setGetterSignature(parented.XmlParented, () => ({
+    __proto__: dart.getGetters(parented.XmlParented.__proto__),
+    parentEvent: dart.legacy(start_element.XmlStartElementEvent)
+  }));
+  dart.setLibraryUri(parented.XmlParented, L0);
+  dart.setFieldSignature(parented.XmlParented, () => ({
+    __proto__: dart.getFields(parented.XmlParented.__proto__),
+    [_parentEvent]: dart.fieldType(dart.legacy(start_element.XmlStartElementEvent))
+  }));
+  const Object_XmlParented$36 = class Object_XmlParented extends core.Object {};
+  (Object_XmlParented$36.new = function() {
+    parented.XmlParented[dart.mixinNew].call(this);
+  }).prototype = Object_XmlParented$36.prototype;
+  dart.applyMixin(Object_XmlParented$36, parented.XmlParented);
+  event.XmlEvent = class XmlEvent extends Object_XmlParented$36 {
+    toString() {
+      return (C0 || CT.C0).convert(JSArrayOfXmlEventL().of([this]));
+    }
+  };
+  (event.XmlEvent.new = function() {
+    event.XmlEvent.__proto__.new.call(this);
+    ;
+  }).prototype = event.XmlEvent.prototype;
+  dart.addTypeTests(event.XmlEvent);
+  dart.addTypeCaches(event.XmlEvent);
+  dart.setMethodSignature(event.XmlEvent, () => ({
+    __proto__: dart.getMethods(event.XmlEvent.__proto__),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setLibraryUri(event.XmlEvent, L1);
+  dart.defineExtensionMethods(event.XmlEvent, ['toString']);
+  var text$0 = dart.privateName(text$, "XmlTextEvent.text");
+  text$.XmlTextEvent = class XmlTextEvent extends event.XmlEvent {
+    get text() {
+      return this[text$0];
+    }
+    set text(value) {
+      super.text = value;
+    }
+    get nodeType() {
+      return node_type.XmlNodeType.TEXT;
+    }
+    accept(visitor) {
+      return visitor.visitTextEvent(this);
+    }
+    get hashCode() {
+      return (dart.notNull(dart.hashCode(this.nodeType)) ^ dart.hashCode(this.text)) >>> 0;
+    }
+    _equals(other) {
+      if (other == null) return false;
+      return XmlTextEventL().is(other) && other.text == this.text;
+    }
+  };
+  (text$.XmlTextEvent.new = function(text) {
+    this[text$0] = text;
+    text$.XmlTextEvent.__proto__.new.call(this);
+    ;
+  }).prototype = text$.XmlTextEvent.prototype;
+  dart.addTypeTests(text$.XmlTextEvent);
+  dart.addTypeCaches(text$.XmlTextEvent);
+  dart.setMethodSignature(text$.XmlTextEvent, () => ({
+    __proto__: dart.getMethods(text$.XmlTextEvent.__proto__),
+    accept: dart.fnType(dart.void, [dart.legacy(visitor.XmlEventVisitor)]),
+    _equals: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object)]),
+    [$_equals]: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object)])
+  }));
+  dart.setGetterSignature(text$.XmlTextEvent, () => ({
+    __proto__: dart.getGetters(text$.XmlTextEvent.__proto__),
+    nodeType: dart.legacy(node_type.XmlNodeType),
+    hashCode: dart.legacy(core.int),
+    [$hashCode]: dart.legacy(core.int)
+  }));
+  dart.setLibraryUri(text$.XmlTextEvent, L2);
+  dart.setFieldSignature(text$.XmlTextEvent, () => ({
+    __proto__: dart.getFields(text$.XmlTextEvent.__proto__),
+    text: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  dart.defineExtensionMethods(text$.XmlTextEvent, ['_equals']);
+  dart.defineExtensionAccessors(text$.XmlTextEvent, ['hashCode']);
+  var target$ = dart.privateName(processing, "XmlProcessingEvent.target");
+  var text$1 = dart.privateName(processing, "XmlProcessingEvent.text");
+  processing.XmlProcessingEvent = class XmlProcessingEvent extends event.XmlEvent {
+    get target() {
+      return this[target$];
+    }
+    set target(value) {
+      super.target = value;
+    }
+    get text() {
+      return this[text$1];
+    }
+    set text(value) {
+      super.text = value;
+    }
+    get nodeType() {
+      return node_type.XmlNodeType.PROCESSING;
+    }
+    accept(visitor) {
+      return visitor.visitProcessingEvent(this);
+    }
+    get hashCode() {
+      return (dart.notNull(dart.hashCode(this.nodeType)) ^ dart.hashCode(this.text) ^ dart.hashCode(this.target)) >>> 0;
+    }
+    _equals(other) {
+      if (other == null) return false;
+      return XmlProcessingEventL().is(other) && other.target == this.target && other.text == this.text;
+    }
+  };
+  (processing.XmlProcessingEvent.new = function(target, text) {
+    this[target$] = target;
+    this[text$1] = text;
+    processing.XmlProcessingEvent.__proto__.new.call(this);
+    ;
+  }).prototype = processing.XmlProcessingEvent.prototype;
+  dart.addTypeTests(processing.XmlProcessingEvent);
+  dart.addTypeCaches(processing.XmlProcessingEvent);
+  dart.setMethodSignature(processing.XmlProcessingEvent, () => ({
+    __proto__: dart.getMethods(processing.XmlProcessingEvent.__proto__),
+    accept: dart.fnType(dart.void, [dart.legacy(visitor.XmlEventVisitor)]),
+    _equals: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object)]),
+    [$_equals]: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object)])
+  }));
+  dart.setGetterSignature(processing.XmlProcessingEvent, () => ({
+    __proto__: dart.getGetters(processing.XmlProcessingEvent.__proto__),
+    nodeType: dart.legacy(node_type.XmlNodeType),
+    hashCode: dart.legacy(core.int),
+    [$hashCode]: dart.legacy(core.int)
+  }));
+  dart.setLibraryUri(processing.XmlProcessingEvent, L3);
+  dart.setFieldSignature(processing.XmlProcessingEvent, () => ({
+    __proto__: dart.getFields(processing.XmlProcessingEvent.__proto__),
+    target: dart.finalFieldType(dart.legacy(core.String)),
+    text: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  dart.defineExtensionMethods(processing.XmlProcessingEvent, ['_equals']);
+  dart.defineExtensionAccessors(processing.XmlProcessingEvent, ['hashCode']);
+  named.XmlNamed = class XmlNamed extends core.Object {};
+  named.XmlNamed[dart.mixinOn] = Object => class XmlNamed extends Object {
+    get qualifiedName() {
+      return this.name;
+    }
+    get namespacePrefix() {
+      let index = this.name[$indexOf](":");
+      return index > 0 ? this.name[$substring](0, index) : null;
+    }
+    get namespaceUri() {
+      let index = this.name[$indexOf](":");
+      let prefix = index < 0 ? null : "xmlns";
+      let local = index < 0 ? "xmlns" : this.name[$substring](0, index);
+      let start = XmlStartElementEventL().is(this) ? this : this.parentEvent;
+      for (let event = XmlStartElementEventL().as(start); event != null; event = event.parentEvent) {
+        for (let attribute of event.attributes) {
+          if (attribute.namespacePrefix == prefix && attribute.localName === local) {
+            return attribute.value;
+          }
+        }
+      }
+      return null;
+    }
+    get localName() {
+      let index = this.name[$indexOf](":");
+      return index > 0 ? this.name[$substring](index + 1) : this.name;
+    }
+  };
+  (named.XmlNamed[dart.mixinNew] = function() {
+  }).prototype = named.XmlNamed.prototype;
+  dart.addTypeTests(named.XmlNamed);
+  dart.addTypeCaches(named.XmlNamed);
+  named.XmlNamed[dart.implements] = () => [parented.XmlParented, core.Object];
+  dart.setGetterSignature(named.XmlNamed, () => ({
+    __proto__: dart.getGetters(named.XmlNamed.__proto__),
+    qualifiedName: dart.legacy(core.String),
+    namespacePrefix: dart.legacy(core.String),
+    namespaceUri: dart.legacy(core.String),
+    localName: dart.legacy(core.String)
+  }));
+  dart.setLibraryUri(named.XmlNamed, L4);
+  var name$ = dart.privateName(end_element, "XmlEndElementEvent.name");
+  const XmlEvent_XmlNamed$36 = class XmlEvent_XmlNamed extends event.XmlEvent {};
+  (XmlEvent_XmlNamed$36.new = function() {
+    XmlEvent_XmlNamed$36.__proto__.new.call(this);
+  }).prototype = XmlEvent_XmlNamed$36.prototype;
+  dart.applyMixin(XmlEvent_XmlNamed$36, named.XmlNamed);
+  end_element.XmlEndElementEvent = class XmlEndElementEvent extends XmlEvent_XmlNamed$36 {
+    get name() {
+      return this[name$];
+    }
+    set name(value) {
+      super.name = value;
+    }
+    get nodeType() {
+      return node_type.XmlNodeType.ELEMENT;
+    }
+    accept(visitor) {
+      return visitor.visitEndElementEvent(this);
+    }
+    get hashCode() {
+      return (dart.notNull(dart.hashCode(this.nodeType)) ^ dart.hashCode(this.name)) >>> 0;
+    }
+    _equals(other) {
+      if (other == null) return false;
+      return XmlEndElementEventL().is(other) && other.name == this.name;
+    }
+  };
+  (end_element.XmlEndElementEvent.new = function(name) {
+    this[name$] = name;
+    end_element.XmlEndElementEvent.__proto__.new.call(this);
+    ;
+  }).prototype = end_element.XmlEndElementEvent.prototype;
+  dart.addTypeTests(end_element.XmlEndElementEvent);
+  dart.addTypeCaches(end_element.XmlEndElementEvent);
+  dart.setMethodSignature(end_element.XmlEndElementEvent, () => ({
+    __proto__: dart.getMethods(end_element.XmlEndElementEvent.__proto__),
+    accept: dart.fnType(dart.void, [dart.legacy(visitor.XmlEventVisitor)]),
+    _equals: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object)]),
+    [$_equals]: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object)])
+  }));
+  dart.setGetterSignature(end_element.XmlEndElementEvent, () => ({
+    __proto__: dart.getGetters(end_element.XmlEndElementEvent.__proto__),
+    nodeType: dart.legacy(node_type.XmlNodeType),
+    hashCode: dart.legacy(core.int),
+    [$hashCode]: dart.legacy(core.int)
+  }));
+  dart.setLibraryUri(end_element.XmlEndElementEvent, L5);
+  dart.setFieldSignature(end_element.XmlEndElementEvent, () => ({
+    __proto__: dart.getFields(end_element.XmlEndElementEvent.__proto__),
+    name: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  dart.defineExtensionMethods(end_element.XmlEndElementEvent, ['_equals']);
+  dart.defineExtensionAccessors(end_element.XmlEndElementEvent, ['hashCode']);
+  var text$2 = dart.privateName(doctype, "XmlDoctypeEvent.text");
+  doctype.XmlDoctypeEvent = class XmlDoctypeEvent extends event.XmlEvent {
+    get text() {
+      return this[text$2];
+    }
+    set text(value) {
+      super.text = value;
+    }
+    get nodeType() {
+      return node_type.XmlNodeType.DOCUMENT_TYPE;
+    }
+    accept(visitor) {
+      return visitor.visitDoctypeEvent(this);
+    }
+    get hashCode() {
+      return (dart.notNull(dart.hashCode(this.nodeType)) ^ dart.hashCode(this.text)) >>> 0;
+    }
+    _equals(other) {
+      if (other == null) return false;
+      return XmlDoctypeEventL().is(other) && other.text == this.text;
+    }
+  };
+  (doctype.XmlDoctypeEvent.new = function(text) {
+    this[text$2] = text;
+    doctype.XmlDoctypeEvent.__proto__.new.call(this);
+    ;
+  }).prototype = doctype.XmlDoctypeEvent.prototype;
+  dart.addTypeTests(doctype.XmlDoctypeEvent);
+  dart.addTypeCaches(doctype.XmlDoctypeEvent);
+  dart.setMethodSignature(doctype.XmlDoctypeEvent, () => ({
+    __proto__: dart.getMethods(doctype.XmlDoctypeEvent.__proto__),
+    accept: dart.fnType(dart.void, [dart.legacy(visitor.XmlEventVisitor)]),
+    _equals: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object)]),
+    [$_equals]: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object)])
+  }));
+  dart.setGetterSignature(doctype.XmlDoctypeEvent, () => ({
+    __proto__: dart.getGetters(doctype.XmlDoctypeEvent.__proto__),
+    nodeType: dart.legacy(node_type.XmlNodeType),
+    hashCode: dart.legacy(core.int),
+    [$hashCode]: dart.legacy(core.int)
+  }));
+  dart.setLibraryUri(doctype.XmlDoctypeEvent, L6);
+  dart.setFieldSignature(doctype.XmlDoctypeEvent, () => ({
+    __proto__: dart.getFields(doctype.XmlDoctypeEvent.__proto__),
+    text: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  dart.defineExtensionMethods(doctype.XmlDoctypeEvent, ['_equals']);
+  dart.defineExtensionAccessors(doctype.XmlDoctypeEvent, ['hashCode']);
+  with_parent.XmlWithParentEvents = class XmlWithParentEvents extends list_converter.XmlListConverter$(dart.legacy(event.XmlEvent), dart.legacy(event.XmlEvent)) {
+    startChunkedConversion(sink) {
+      SinkLOfListLOfXmlEventL().as(sink);
+      return new with_parent._XmlWithParentEventsSink.new(sink);
+    }
+  };
+  (with_parent.XmlWithParentEvents.new = function() {
+    with_parent.XmlWithParentEvents.__proto__.new.call(this);
+    ;
+  }).prototype = with_parent.XmlWithParentEvents.prototype;
+  dart.addTypeTests(with_parent.XmlWithParentEvents);
+  dart.addTypeCaches(with_parent.XmlWithParentEvents);
+  dart.setMethodSignature(with_parent.XmlWithParentEvents, () => ({
+    __proto__: dart.getMethods(with_parent.XmlWithParentEvents.__proto__),
+    startChunkedConversion: dart.fnType(dart.legacy(convert.ChunkedConversionSink$(dart.legacy(core.List$(dart.legacy(event.XmlEvent))))), [dart.legacy(core.Object)])
+  }));
+  dart.setLibraryUri(with_parent.XmlWithParentEvents, L7);
+  visitor.XmlEventVisitor = class XmlEventVisitor extends core.Object {};
+  visitor.XmlEventVisitor[dart.mixinOn] = Object => class XmlEventVisitor extends Object {
+    visit(event) {
+      return event.accept(this);
+    }
+  };
+  (visitor.XmlEventVisitor[dart.mixinNew] = function() {
+  }).prototype = visitor.XmlEventVisitor.prototype;
+  dart.addTypeTests(visitor.XmlEventVisitor);
+  dart.addTypeCaches(visitor.XmlEventVisitor);
+  visitor.XmlEventVisitor[dart.implements] = () => [core.Object];
+  dart.setMethodSignature(visitor.XmlEventVisitor, () => ({
+    __proto__: dart.getMethods(visitor.XmlEventVisitor.__proto__),
+    visit: dart.fnType(dart.void, [dart.legacy(event.XmlEvent)])
+  }));
+  dart.setLibraryUri(visitor.XmlEventVisitor, L8);
+  const ChunkedConversionSink_XmlEventVisitor$36 = class ChunkedConversionSink_XmlEventVisitor extends convert.ChunkedConversionSink$(dart.legacy(core.List$(dart.legacy(event.XmlEvent)))) {};
+  (ChunkedConversionSink_XmlEventVisitor$36.new = function() {
+    ChunkedConversionSink_XmlEventVisitor$36.__proto__.new.call(this);
+  }).prototype = ChunkedConversionSink_XmlEventVisitor$36.prototype;
+  dart.applyMixin(ChunkedConversionSink_XmlEventVisitor$36, visitor.XmlEventVisitor);
+  with_parent._XmlWithParentEventsSink = class _XmlWithParentEventsSink extends ChunkedConversionSink_XmlEventVisitor$36 {
+    add(events) {
+      ListLOfXmlEventL().as(events);
+      events[$forEach](dart.bind(this, 'visit'));
+      this.sink.add(events);
+    }
+    close() {
+      if (this.currentParent != null) {
+        dart.throw(exceptions.XmlTagException.missingClosingTag(this.currentParent.name));
+      }
+      this.sink.close();
+    }
+    visitCDATAEvent(event) {
+      return event.attachParentEvent(this.currentParent);
+    }
+    visitCommentEvent(event) {
+      return event.attachParentEvent(this.currentParent);
+    }
+    visitDeclarationEvent(event) {
+      return event.attachParentEvent(this.currentParent);
+    }
+    visitDoctypeEvent(event) {
+      return event.attachParentEvent(this.currentParent);
+    }
+    visitEndElementEvent(event) {
+      if (this.currentParent == null) {
+        dart.throw(exceptions.XmlTagException.unexpectedClosingTag(event.name));
+      } else if (this.currentParent.name != event.name) {
+        dart.throw(exceptions.XmlTagException.mismatchClosingTag(this.currentParent.name, event.name));
+      }
+      event.attachParentEvent(this.currentParent);
+      this.currentParent = this.currentParent.parentEvent;
+    }
+    visitProcessingEvent(event) {
+      return event.attachParentEvent(this.currentParent);
+    }
+    visitStartElementEvent(event) {
+      event.attachParentEvent(this.currentParent);
+      for (let attribute of event.attributes) {
+        attribute.attachParentEvent(event);
+      }
+      if (!dart.test(event.isSelfClosing)) {
+        this.currentParent = event;
+      }
+    }
+    visitTextEvent(event) {
+      return event.attachParentEvent(this.currentParent);
+    }
+  };
+  (with_parent._XmlWithParentEventsSink.new = function(sink) {
+    this.currentParent = null;
+    this.sink = sink;
+    with_parent._XmlWithParentEventsSink.__proto__.new.call(this);
+    ;
+  }).prototype = with_parent._XmlWithParentEventsSink.prototype;
+  dart.addTypeTests(with_parent._XmlWithParentEventsSink);
+  dart.addTypeCaches(with_parent._XmlWithParentEventsSink);
+  dart.setMethodSignature(with_parent._XmlWithParentEventsSink, () => ({
+    __proto__: dart.getMethods(with_parent._XmlWithParentEventsSink.__proto__),
+    add: dart.fnType(dart.void, [dart.legacy(core.Object)]),
+    close: dart.fnType(dart.void, []),
+    visitCDATAEvent: dart.fnType(dart.void, [dart.legacy(cdata.XmlCDATAEvent)]),
+    visitCommentEvent: dart.fnType(dart.void, [dart.legacy(comment.XmlCommentEvent)]),
+    visitDeclarationEvent: dart.fnType(dart.void, [dart.legacy(declaration.XmlDeclarationEvent)]),
+    visitDoctypeEvent: dart.fnType(dart.void, [dart.legacy(doctype.XmlDoctypeEvent)]),
+    visitEndElementEvent: dart.fnType(dart.void, [dart.legacy(end_element.XmlEndElementEvent)]),
+    visitProcessingEvent: dart.fnType(dart.void, [dart.legacy(processing.XmlProcessingEvent)]),
+    visitStartElementEvent: dart.fnType(dart.void, [dart.legacy(start_element.XmlStartElementEvent)]),
+    visitTextEvent: dart.fnType(dart.void, [dart.legacy(text$.XmlTextEvent)])
+  }));
+  dart.setLibraryUri(with_parent._XmlWithParentEventsSink, L7);
+  dart.setFieldSignature(with_parent._XmlWithParentEventsSink, () => ({
+    __proto__: dart.getFields(with_parent._XmlWithParentEventsSink.__proto__),
+    sink: dart.finalFieldType(dart.legacy(core.Sink$(dart.legacy(core.List$(dart.legacy(event.XmlEvent)))))),
+    currentParent: dart.fieldType(dart.legacy(start_element.XmlStartElementEvent))
+  }));
+  var C3;
+  with_parent['XmlWithParentEventsExtension|withParentEvents'] = function XmlWithParentEventsExtension$124withParentEvents($this) {
+    return $this.transform(ListLOfXmlEventL(), C3 || CT.C3);
+  };
+  with_parent['XmlWithParentEventsExtension|get#withParentEvents'] = function XmlWithParentEventsExtension$124get$35withParentEvents($this) {
+    return dart.fn(() => with_parent['XmlWithParentEventsExtension|withParentEvents']($this), VoidToStreamLOfListLOfXmlEventL());
+  };
+  var C5;
+  var ListEquality__elementEquality = dart.privateName(equality, "ListEquality._elementEquality");
+  var C4;
+  var name$0 = dart.privateName(start_element, "XmlStartElementEvent.name");
+  var attributes$ = dart.privateName(start_element, "XmlStartElementEvent.attributes");
+  var isSelfClosing$ = dart.privateName(start_element, "XmlStartElementEvent.isSelfClosing");
+  const XmlEvent_XmlNamed$36$ = class XmlEvent_XmlNamed extends event.XmlEvent {};
+  (XmlEvent_XmlNamed$36$.new = function() {
+    XmlEvent_XmlNamed$36$.__proto__.new.call(this);
+  }).prototype = XmlEvent_XmlNamed$36$.prototype;
+  dart.applyMixin(XmlEvent_XmlNamed$36$, named.XmlNamed);
+  start_element.XmlStartElementEvent = class XmlStartElementEvent extends XmlEvent_XmlNamed$36$ {
+    get name() {
+      return this[name$0];
+    }
+    set name(value) {
+      super.name = value;
+    }
+    get attributes() {
+      return this[attributes$];
+    }
+    set attributes(value) {
+      super.attributes = value;
+    }
+    get isSelfClosing() {
+      return this[isSelfClosing$];
+    }
+    set isSelfClosing(value) {
+      super.isSelfClosing = value;
+    }
+    get nodeType() {
+      return node_type.XmlNodeType.ELEMENT;
+    }
+    accept(visitor) {
+      return visitor.visitStartElementEvent(this);
+    }
+    get hashCode() {
+      return (dart.notNull(dart.hashCode(this.nodeType)) ^ dart.hashCode(this.name) ^ dart.hashCode(this.isSelfClosing) ^ dart.notNull((C4 || CT.C4).hash(this.attributes))) >>> 0;
+    }
+    _equals(other) {
+      if (other == null) return false;
+      return XmlStartElementEventL().is(other) && other.name == this.name && dart.equals(other.isSelfClosing, this.isSelfClosing) && dart.test((C4 || CT.C4).equals(other.attributes, this.attributes));
+    }
+  };
+  (start_element.XmlStartElementEvent.new = function(name, attributes, isSelfClosing) {
+    this[name$0] = name;
+    this[attributes$] = attributes;
+    this[isSelfClosing$] = isSelfClosing;
+    start_element.XmlStartElementEvent.__proto__.new.call(this);
+    ;
+  }).prototype = start_element.XmlStartElementEvent.prototype;
+  dart.addTypeTests(start_element.XmlStartElementEvent);
+  dart.addTypeCaches(start_element.XmlStartElementEvent);
+  dart.setMethodSignature(start_element.XmlStartElementEvent, () => ({
+    __proto__: dart.getMethods(start_element.XmlStartElementEvent.__proto__),
+    accept: dart.fnType(dart.void, [dart.legacy(visitor.XmlEventVisitor)]),
+    _equals: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object)]),
+    [$_equals]: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object)])
+  }));
+  dart.setGetterSignature(start_element.XmlStartElementEvent, () => ({
+    __proto__: dart.getGetters(start_element.XmlStartElementEvent.__proto__),
+    nodeType: dart.legacy(node_type.XmlNodeType),
+    hashCode: dart.legacy(core.int),
+    [$hashCode]: dart.legacy(core.int)
+  }));
+  dart.setLibraryUri(start_element.XmlStartElementEvent, L9);
+  dart.setFieldSignature(start_element.XmlStartElementEvent, () => ({
+    __proto__: dart.getFields(start_element.XmlStartElementEvent.__proto__),
+    name: dart.finalFieldType(dart.legacy(core.String)),
+    attributes: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(event_attribute.XmlEventAttribute)))),
+    isSelfClosing: dart.finalFieldType(dart.legacy(core.bool))
+  }));
+  dart.defineExtensionMethods(start_element.XmlStartElementEvent, ['_equals']);
+  dart.defineExtensionAccessors(start_element.XmlStartElementEvent, ['hashCode']);
+  var name$1 = dart.privateName(event_attribute, "XmlEventAttribute.name");
+  var value$ = dart.privateName(event_attribute, "XmlEventAttribute.value");
+  var attributeType$ = dart.privateName(event_attribute, "XmlEventAttribute.attributeType");
+  const Object_XmlNamed$36 = class Object_XmlNamed extends core.Object {};
+  (Object_XmlNamed$36.new = function() {
+  }).prototype = Object_XmlNamed$36.prototype;
+  dart.applyMixin(Object_XmlNamed$36, named.XmlNamed);
+  const Object_XmlParented$36$ = class Object_XmlParented extends Object_XmlNamed$36 {};
+  (Object_XmlParented$36$.new = function() {
+    parented.XmlParented[dart.mixinNew].call(this);
+  }).prototype = Object_XmlParented$36$.prototype;
+  dart.applyMixin(Object_XmlParented$36$, parented.XmlParented);
+  event_attribute.XmlEventAttribute = class XmlEventAttribute extends Object_XmlParented$36$ {
+    get name() {
+      return this[name$1];
+    }
+    set name(value) {
+      super.name = value;
+    }
+    get value() {
+      return this[value$];
+    }
+    set value(value) {
+      super.value = value;
+    }
+    get attributeType() {
+      return this[attributeType$];
+    }
+    set attributeType(value) {
+      super.attributeType = value;
+    }
+    get hashCode() {
+      return (dart.hashCode(this.name) ^ dart.hashCode(this.value)) >>> 0;
+    }
+    _equals(other) {
+      if (other == null) return false;
+      return XmlEventAttributeL().is(other) && other.name == this.name && other.value == this.value && other.attributeType == this.attributeType;
+    }
+  };
+  (event_attribute.XmlEventAttribute.new = function(name, value, attributeType) {
+    this[name$1] = name;
+    this[value$] = value;
+    this[attributeType$] = attributeType;
+    event_attribute.XmlEventAttribute.__proto__.new.call(this);
+    ;
+  }).prototype = event_attribute.XmlEventAttribute.prototype;
+  dart.addTypeTests(event_attribute.XmlEventAttribute);
+  dart.addTypeCaches(event_attribute.XmlEventAttribute);
+  dart.setMethodSignature(event_attribute.XmlEventAttribute, () => ({
+    __proto__: dart.getMethods(event_attribute.XmlEventAttribute.__proto__),
+    _equals: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object)]),
+    [$_equals]: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object)])
+  }));
+  dart.setGetterSignature(event_attribute.XmlEventAttribute, () => ({
+    __proto__: dart.getGetters(event_attribute.XmlEventAttribute.__proto__),
+    hashCode: dart.legacy(core.int),
+    [$hashCode]: dart.legacy(core.int)
+  }));
+  dart.setLibraryUri(event_attribute.XmlEventAttribute, L10);
+  dart.setFieldSignature(event_attribute.XmlEventAttribute, () => ({
+    __proto__: dart.getFields(event_attribute.XmlEventAttribute.__proto__),
+    name: dart.finalFieldType(dart.legacy(core.String)),
+    value: dart.finalFieldType(dart.legacy(core.String)),
+    attributeType: dart.finalFieldType(dart.legacy(attribute_type.XmlAttributeType))
+  }));
+  dart.defineExtensionMethods(event_attribute.XmlEventAttribute, ['_equals']);
+  dart.defineExtensionAccessors(event_attribute.XmlEventAttribute, ['hashCode']);
+  var attributes$0 = dart.privateName(declaration, "XmlDeclarationEvent.attributes");
+  declaration.XmlDeclarationEvent = class XmlDeclarationEvent extends event.XmlEvent {
+    get attributes() {
+      return this[attributes$0];
+    }
+    set attributes(value) {
+      super.attributes = value;
+    }
+    get nodeType() {
+      return node_type.XmlNodeType.DECLARATION;
+    }
+    accept(visitor) {
+      return visitor.visitDeclarationEvent(this);
+    }
+    get hashCode() {
+      return (dart.notNull(dart.hashCode(this.nodeType)) ^ dart.notNull((C4 || CT.C4).hash(this.attributes))) >>> 0;
+    }
+    _equals(other) {
+      if (other == null) return false;
+      return XmlDeclarationEventL().is(other) && dart.test((C4 || CT.C4).equals(other.attributes, this.attributes));
+    }
+  };
+  (declaration.XmlDeclarationEvent.new = function(attributes) {
+    this[attributes$0] = attributes;
+    declaration.XmlDeclarationEvent.__proto__.new.call(this);
+    ;
+  }).prototype = declaration.XmlDeclarationEvent.prototype;
+  dart.addTypeTests(declaration.XmlDeclarationEvent);
+  dart.addTypeCaches(declaration.XmlDeclarationEvent);
+  dart.setMethodSignature(declaration.XmlDeclarationEvent, () => ({
+    __proto__: dart.getMethods(declaration.XmlDeclarationEvent.__proto__),
+    accept: dart.fnType(dart.void, [dart.legacy(visitor.XmlEventVisitor)]),
+    _equals: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object)]),
+    [$_equals]: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object)])
+  }));
+  dart.setGetterSignature(declaration.XmlDeclarationEvent, () => ({
+    __proto__: dart.getGetters(declaration.XmlDeclarationEvent.__proto__),
+    nodeType: dart.legacy(node_type.XmlNodeType),
+    hashCode: dart.legacy(core.int),
+    [$hashCode]: dart.legacy(core.int)
+  }));
+  dart.setLibraryUri(declaration.XmlDeclarationEvent, L11);
+  dart.setFieldSignature(declaration.XmlDeclarationEvent, () => ({
+    __proto__: dart.getFields(declaration.XmlDeclarationEvent.__proto__),
+    attributes: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(event_attribute.XmlEventAttribute))))
+  }));
+  dart.defineExtensionMethods(declaration.XmlDeclarationEvent, ['_equals']);
+  dart.defineExtensionAccessors(declaration.XmlDeclarationEvent, ['hashCode']);
+  var text$3 = dart.privateName(comment, "XmlCommentEvent.text");
+  comment.XmlCommentEvent = class XmlCommentEvent extends event.XmlEvent {
+    get text() {
+      return this[text$3];
+    }
+    set text(value) {
+      super.text = value;
+    }
+    get nodeType() {
+      return node_type.XmlNodeType.COMMENT;
+    }
+    accept(visitor) {
+      return visitor.visitCommentEvent(this);
+    }
+    get hashCode() {
+      return (dart.notNull(dart.hashCode(this.nodeType)) ^ dart.hashCode(this.text)) >>> 0;
+    }
+    _equals(other) {
+      if (other == null) return false;
+      return XmlCommentEventL().is(other) && other.text == this.text;
+    }
+  };
+  (comment.XmlCommentEvent.new = function(text) {
+    this[text$3] = text;
+    comment.XmlCommentEvent.__proto__.new.call(this);
+    ;
+  }).prototype = comment.XmlCommentEvent.prototype;
+  dart.addTypeTests(comment.XmlCommentEvent);
+  dart.addTypeCaches(comment.XmlCommentEvent);
+  dart.setMethodSignature(comment.XmlCommentEvent, () => ({
+    __proto__: dart.getMethods(comment.XmlCommentEvent.__proto__),
+    accept: dart.fnType(dart.void, [dart.legacy(visitor.XmlEventVisitor)]),
+    _equals: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object)]),
+    [$_equals]: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object)])
+  }));
+  dart.setGetterSignature(comment.XmlCommentEvent, () => ({
+    __proto__: dart.getGetters(comment.XmlCommentEvent.__proto__),
+    nodeType: dart.legacy(node_type.XmlNodeType),
+    hashCode: dart.legacy(core.int),
+    [$hashCode]: dart.legacy(core.int)
+  }));
+  dart.setLibraryUri(comment.XmlCommentEvent, L12);
+  dart.setFieldSignature(comment.XmlCommentEvent, () => ({
+    __proto__: dart.getFields(comment.XmlCommentEvent.__proto__),
+    text: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  dart.defineExtensionMethods(comment.XmlCommentEvent, ['_equals']);
+  dart.defineExtensionAccessors(comment.XmlCommentEvent, ['hashCode']);
+  var text$4 = dart.privateName(cdata, "XmlCDATAEvent.text");
+  cdata.XmlCDATAEvent = class XmlCDATAEvent extends event.XmlEvent {
+    get text() {
+      return this[text$4];
+    }
+    set text(value) {
+      super.text = value;
+    }
+    get nodeType() {
+      return node_type.XmlNodeType.CDATA;
+    }
+    accept(visitor) {
+      return visitor.visitCDATAEvent(this);
+    }
+    get hashCode() {
+      return (dart.notNull(dart.hashCode(this.nodeType)) ^ dart.hashCode(this.text)) >>> 0;
+    }
+    _equals(other) {
+      if (other == null) return false;
+      return XmlCDATAEventL().is(other) && other.text == this.text;
+    }
+  };
+  (cdata.XmlCDATAEvent.new = function(text) {
+    this[text$4] = text;
+    cdata.XmlCDATAEvent.__proto__.new.call(this);
+    ;
+  }).prototype = cdata.XmlCDATAEvent.prototype;
+  dart.addTypeTests(cdata.XmlCDATAEvent);
+  dart.addTypeCaches(cdata.XmlCDATAEvent);
+  dart.setMethodSignature(cdata.XmlCDATAEvent, () => ({
+    __proto__: dart.getMethods(cdata.XmlCDATAEvent.__proto__),
+    accept: dart.fnType(dart.void, [dart.legacy(visitor.XmlEventVisitor)]),
+    _equals: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object)]),
+    [$_equals]: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object)])
+  }));
+  dart.setGetterSignature(cdata.XmlCDATAEvent, () => ({
+    __proto__: dart.getGetters(cdata.XmlCDATAEvent.__proto__),
+    nodeType: dart.legacy(node_type.XmlNodeType),
+    hashCode: dart.legacy(core.int),
+    [$hashCode]: dart.legacy(core.int)
+  }));
+  dart.setLibraryUri(cdata.XmlCDATAEvent, L13);
+  dart.setFieldSignature(cdata.XmlCDATAEvent, () => ({
+    __proto__: dart.getFields(cdata.XmlCDATAEvent.__proto__),
+    text: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  dart.defineExtensionMethods(cdata.XmlCDATAEvent, ['_equals']);
+  dart.defineExtensionAccessors(cdata.XmlCDATAEvent, ['hashCode']);
+  event_encoder.XmlEventEncoder = class XmlEventEncoder extends convert.Converter$(dart.legacy(core.List$(dart.legacy(event.XmlEvent))), dart.legacy(core.String)) {
+    get entityMapping() {
+      return this[entityMapping$];
+    }
+    set entityMapping(value) {
+      super.entityMapping = value;
+    }
+    convert(input) {
+      ListLOfXmlEventL().as(input);
+      let accumulator = new string_accumulator_sink.StringAccumulatorSink.new();
+      let conversion = this.startChunkedConversion(accumulator);
+      conversion.add(input);
+      conversion.close();
+      return accumulator.string;
+    }
+    startChunkedConversion(sink) {
+      SinkLOfStringL().as(sink);
+      return new event_encoder._XmlEventEncoderSink.new(sink, this.entityMapping);
+    }
+  };
+  (event_encoder.XmlEventEncoder.new = function(opts) {
+    let entityMapping = opts && 'entityMapping' in opts ? opts.entityMapping : C1 || CT.C1;
+    this[entityMapping$] = entityMapping;
+    event_encoder.XmlEventEncoder.__proto__.new.call(this);
+    ;
+  }).prototype = event_encoder.XmlEventEncoder.prototype;
+  dart.addTypeTests(event_encoder.XmlEventEncoder);
+  dart.addTypeCaches(event_encoder.XmlEventEncoder);
+  const entityMapping$ = XmlEventEncoder_entityMapping;
+  dart.setMethodSignature(event_encoder.XmlEventEncoder, () => ({
+    __proto__: dart.getMethods(event_encoder.XmlEventEncoder.__proto__),
+    convert: dart.fnType(dart.legacy(core.String), [dart.legacy(core.Object)]),
+    startChunkedConversion: dart.fnType(dart.legacy(convert.ChunkedConversionSink$(dart.legacy(core.List$(dart.legacy(event.XmlEvent))))), [dart.legacy(core.Object)])
+  }));
+  dart.setLibraryUri(event_encoder.XmlEventEncoder, L14);
+  dart.setFieldSignature(event_encoder.XmlEventEncoder, () => ({
+    __proto__: dart.getFields(event_encoder.XmlEventEncoder.__proto__),
+    entityMapping: dart.finalFieldType(dart.legacy(entity_mapping.XmlEntityMapping))
+  }));
+  const ChunkedConversionSink_XmlEventVisitor$36$ = class ChunkedConversionSink_XmlEventVisitor extends convert.ChunkedConversionSink$(dart.legacy(core.List$(dart.legacy(event.XmlEvent)))) {};
+  (ChunkedConversionSink_XmlEventVisitor$36$.new = function() {
+    ChunkedConversionSink_XmlEventVisitor$36$.__proto__.new.call(this);
+  }).prototype = ChunkedConversionSink_XmlEventVisitor$36$.prototype;
+  dart.applyMixin(ChunkedConversionSink_XmlEventVisitor$36$, visitor.XmlEventVisitor);
+  event_encoder._XmlEventEncoderSink = class _XmlEventEncoderSink extends ChunkedConversionSink_XmlEventVisitor$36$ {
+    add(chunk) {
+      ListLOfXmlEventL().as(chunk);
+      return chunk[$forEach](dart.bind(this, 'visit'));
+    }
+    close() {
+      return this.sink.close();
+    }
+    visitCDATAEvent(event) {
+      this.sink.add("<![CDATA[");
+      this.sink.add(event.text);
+      this.sink.add("]]>");
+    }
+    visitCommentEvent(event) {
+      this.sink.add("<!--");
+      this.sink.add(event.text);
+      this.sink.add("-->");
+    }
+    visitDeclarationEvent(event) {
+      this.sink.add("<?xml");
+      this.addAttributes(event.attributes);
+      this.sink.add("?>");
+    }
+    visitDoctypeEvent(event) {
+      this.sink.add("<!DOCTYPE");
+      this.sink.add(" ");
+      this.sink.add(event.text);
+      this.sink.add(">");
+    }
+    visitEndElementEvent(event) {
+      this.sink.add("</");
+      this.sink.add(event.name);
+      this.sink.add(">");
+    }
+    visitProcessingEvent(event) {
+      this.sink.add("<?");
+      this.sink.add(event.target);
+      if (event.text[$isNotEmpty]) {
+        this.sink.add(" ");
+        this.sink.add(event.text);
+      }
+      this.sink.add("?>");
+    }
+    visitStartElementEvent(event) {
+      this.sink.add("<");
+      this.sink.add(event.name);
+      this.addAttributes(event.attributes);
+      if (dart.test(event.isSelfClosing)) {
+        this.sink.add("/>");
+      } else {
+        this.sink.add(">");
+      }
+    }
+    visitTextEvent(event) {
+      this.sink.add(this.entityMapping.encodeText(event.text));
+    }
+    addAttributes(attributes) {
+      for (let attribute of attributes) {
+        this.sink.add(" ");
+        this.sink.add(attribute.name);
+        this.sink.add("=");
+        this.sink.add(this.entityMapping.encodeAttributeValueWithQuotes(attribute.value, attribute.attributeType));
+      }
+    }
+  };
+  (event_encoder._XmlEventEncoderSink.new = function(sink, entityMapping) {
+    this.sink = sink;
+    this.entityMapping = entityMapping;
+    event_encoder._XmlEventEncoderSink.__proto__.new.call(this);
+    ;
+  }).prototype = event_encoder._XmlEventEncoderSink.prototype;
+  dart.addTypeTests(event_encoder._XmlEventEncoderSink);
+  dart.addTypeCaches(event_encoder._XmlEventEncoderSink);
+  dart.setMethodSignature(event_encoder._XmlEventEncoderSink, () => ({
+    __proto__: dart.getMethods(event_encoder._XmlEventEncoderSink.__proto__),
+    add: dart.fnType(dart.void, [dart.legacy(core.Object)]),
+    close: dart.fnType(dart.void, []),
+    visitCDATAEvent: dart.fnType(dart.void, [dart.legacy(cdata.XmlCDATAEvent)]),
+    visitCommentEvent: dart.fnType(dart.void, [dart.legacy(comment.XmlCommentEvent)]),
+    visitDeclarationEvent: dart.fnType(dart.void, [dart.legacy(declaration.XmlDeclarationEvent)]),
+    visitDoctypeEvent: dart.fnType(dart.void, [dart.legacy(doctype.XmlDoctypeEvent)]),
+    visitEndElementEvent: dart.fnType(dart.void, [dart.legacy(end_element.XmlEndElementEvent)]),
+    visitProcessingEvent: dart.fnType(dart.void, [dart.legacy(processing.XmlProcessingEvent)]),
+    visitStartElementEvent: dart.fnType(dart.void, [dart.legacy(start_element.XmlStartElementEvent)]),
+    visitTextEvent: dart.fnType(dart.void, [dart.legacy(text$.XmlTextEvent)]),
+    addAttributes: dart.fnType(dart.void, [dart.legacy(core.List$(dart.legacy(event_attribute.XmlEventAttribute)))])
+  }));
+  dart.setLibraryUri(event_encoder._XmlEventEncoderSink, L14);
+  dart.setFieldSignature(event_encoder._XmlEventEncoderSink, () => ({
+    __proto__: dart.getFields(event_encoder._XmlEventEncoderSink.__proto__),
+    sink: dart.finalFieldType(dart.legacy(core.Sink$(dart.legacy(core.String)))),
+    entityMapping: dart.finalFieldType(dart.legacy(entity_mapping.XmlEntityMapping))
+  }));
+  event_encoder['XmlEventEncoderExtension|toXmlString'] = function XmlEventEncoderExtension$124toXmlString($this, opts) {
+    let entityMapping = opts && 'entityMapping' in opts ? opts.entityMapping : C1 || CT.C1;
+    return $this.transform(StringL(), new event_encoder.XmlEventEncoder.new({entityMapping: entityMapping}));
+  };
+  event_encoder['XmlEventEncoderExtension|get#toXmlString'] = function XmlEventEncoderExtension$124get$35toXmlString($this) {
+    return dart.fn(opts => {
+      let entityMapping = opts && 'entityMapping' in opts ? opts.entityMapping : C1 || CT.C1;
+      return event_encoder['XmlEventEncoderExtension|toXmlString']($this, {entityMapping: entityMapping});
+    }, __ToStreamLOfStringL());
+  };
+  dart.trackLibraries("packages/xml/src/xml_events/events/text.dart", {
+    "package:xml/src/xml_events/events/text.dart": text$,
+    "package:xml/src/xml_events/events/processing.dart": processing,
+    "package:xml/src/xml_events/events/end_element.dart": end_element,
+    "package:xml/src/xml_events/events/doctype.dart": doctype,
+    "package:xml/src/xml_events/streams/with_parent.dart": with_parent,
+    "package:xml/src/xml_events/utils/parented.dart": parented,
+    "package:xml/src/xml_events/events/start_element.dart": start_element,
+    "package:xml/src/xml_events/utils/named.dart": named,
+    "package:xml/src/xml_events/utils/event_attribute.dart": event_attribute,
+    "package:xml/src/xml_events/events/declaration.dart": declaration,
+    "package:xml/src/xml_events/events/comment.dart": comment,
+    "package:xml/src/xml_events/visitor.dart": visitor,
+    "package:xml/src/xml_events/events/cdata.dart": cdata,
+    "package:xml/src/xml_events/converters/event_encoder.dart": event_encoder,
+    "package:xml/src/xml_events/event.dart": event
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["../utils/parented.dart","../event.dart","text.dart","processing.dart","../utils/named.dart","end_element.dart","doctype.dart","../streams/with_parent.dart","../visitor.dart","start_element.dart","../utils/event_attribute.dart","declaration.dart","comment.dart","cdata.dart","../converters/event_encoder.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../../L:/packages/xml/src/xml_events/events/text.dart.lib.js"}');
+  // Exports:
+  return {
+    src__xml_events__events__text: text$,
+    src__xml_events__events__processing: processing,
+    src__xml_events__events__end_element: end_element,
+    src__xml_events__events__doctype: doctype,
+    src__xml_events__streams__with_parent: with_parent,
+    src__xml_events__utils__parented: parented,
+    src__xml_events__events__start_element: start_element,
+    src__xml_events__utils__named: named,
+    src__xml_events__utils__event_attribute: event_attribute,
+    src__xml_events__events__declaration: declaration,
+    src__xml_events__events__comment: comment,
+    src__xml_events__visitor: visitor,
+    src__xml_events__events__cdata: cdata,
+    src__xml_events__converters__event_encoder: event_encoder,
+    src__xml_events__event: event
+  };
+}));
+
+//# sourceMappingURL=text.dart.lib.js.map

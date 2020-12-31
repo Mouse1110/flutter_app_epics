@@ -1,0 +1,375 @@
+define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/material/page.dart', 'packages/spocs/detail/detail_screen.dart', 'packages/spocs/account/account_screen.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/widgets/bottom_navigation_bar_item.dart', 'packages/flutter/src/widgets/icon.dart', 'packages/flutter/src/widgets/icon_data.dart', 'packages/spocs/Model/constants.dart'], (function load__packages__spocs__home__component__bottom_nav_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__material__page$46dart, packages__spocs__detail__detail_screen$46dart, packages__spocs__account__account_screen$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__widgets__bottom_navigation_bar_item$46dart, packages__flutter__src__widgets__icon$46dart, packages__flutter__src__widgets__icon_data$46dart, packages__spocs__Model__constants$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const navigator = packages__flutter__src__widgets__widget_span$46dart.src__widgets__navigator;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const page = packages__flutter__src__material__page$46dart.src__material__page;
+  const detail_screen = packages__spocs__detail__detail_screen$46dart.detail__detail_screen;
+  const account_screen = packages__spocs__account__account_screen$46dart.account__account_screen;
+  const bottom_navigation_bar = packages__flutter__src__material__icon_button$46dart.src__material__bottom_navigation_bar;
+  const bottom_navigation_bar_item = packages__flutter__src__widgets__bottom_navigation_bar_item$46dart.src__widgets__bottom_navigation_bar_item;
+  const icon = packages__flutter__src__widgets__icon$46dart.src__widgets__icon;
+  const icon_data = packages__flutter__src__widgets__icon_data$46dart.src__widgets__icon_data;
+  const constants = packages__spocs__Model__constants$46dart.Model__constants;
+  var bottom_nav = Object.create(dart.library);
+  var _LocationL = () => (_LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))();
+  var DetailScreenL = () => (DetailScreenL = dart.constFn(dart.legacy(detail_screen.DetailScreen)))();
+  var BuildContextL = () => (BuildContextL = dart.constFn(dart.legacy(framework.BuildContext)))();
+  var BuildContextLToDetailScreenL = () => (BuildContextLToDetailScreenL = dart.constFn(dart.fnType(DetailScreenL(), [BuildContextL()])))();
+  var AccountScreenL = () => (AccountScreenL = dart.constFn(dart.legacy(account_screen.AccountScreen)))();
+  var BuildContextLToAccountScreenL = () => (BuildContextLToAccountScreenL = dart.constFn(dart.fnType(AccountScreenL(), [BuildContextL()])))();
+  var VoidToNull = () => (VoidToNull = dart.constFn(dart.fnType(core.Null, [])))();
+  var BottomNavigationBarItemL = () => (BottomNavigationBarItemL = dart.constFn(dart.legacy(bottom_navigation_bar_item.BottomNavigationBarItem)))();
+  const CT = Object.create(null);
+  var L0 = "package:spocs/home/component/bottom_nav.dart";
+  dart.defineLazy(CT, {
+    get C1() {
+      return C1 = dart.constList([], _LocationL());
+    },
+    get C0() {
+      return C0 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C1 || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 37,
+        [_Location_line]: 23,
+        [_Location_file]: "file:///L:/Work/Logistic/spocs/lib/home/component/bottom_nav.dart"
+      });
+    },
+    get C2() {
+      return C2 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C1 || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 62,
+        [_Location_line]: 27,
+        [_Location_file]: "file:///L:/Work/Logistic/spocs/lib/home/component/bottom_nav.dart"
+      });
+    },
+    get C8() {
+      return C8 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 28,
+        [_Location_line]: 37,
+        [_Location_file]: null
+      });
+    },
+    get C7() {
+      return C7 = dart.constList([C8 || CT.C8], _LocationL());
+    },
+    get C6() {
+      return C6 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C7 || CT.C7,
+        [_Location_name]: null,
+        [_Location_column]: 17,
+        [_Location_line]: 37,
+        [_Location_file]: "file:///L:/Work/Logistic/spocs/lib/home/component/bottom_nav.dart"
+      });
+    },
+    get C9() {
+      return C9 = dart.const({
+        __proto__: icon_data.IconData.prototype,
+        [IconData_matchTextDirection]: false,
+        [IconData_fontPackage]: null,
+        [IconData_fontFamily]: "MaterialIcons",
+        [IconData_codePoint]: 61077
+      });
+    },
+    get C5() {
+      return C5 = dart.const({
+        __proto__: icon.Icon.prototype,
+        [Widget__location]: C6 || CT.C6,
+        [Widget_key]: null,
+        [Icon_textDirection]: null,
+        [Icon_semanticLabel]: null,
+        [Icon_color]: null,
+        [Icon_size]: null,
+        [Icon_icon]: C9 || CT.C9
+      });
+    },
+    get C4() {
+      return C4 = dart.const({
+        __proto__: bottom_navigation_bar_item.BottomNavigationBarItem.prototype,
+        [BottomNavigationBarItem_backgroundColor]: null,
+        [BottomNavigationBarItem_label]: "Bật/Tắt Lọc",
+        [BottomNavigationBarItem_title]: null,
+        [BottomNavigationBarItem_activeIcon]: C5 || CT.C5,
+        [BottomNavigationBarItem_icon]: C5 || CT.C5
+      });
+    },
+    get C14() {
+      return C14 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 28,
+        [_Location_line]: 41,
+        [_Location_file]: null
+      });
+    },
+    get C13() {
+      return C13 = dart.constList([C14 || CT.C14], _LocationL());
+    },
+    get C12() {
+      return C12 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C13 || CT.C13,
+        [_Location_name]: null,
+        [_Location_column]: 17,
+        [_Location_line]: 41,
+        [_Location_file]: "file:///L:/Work/Logistic/spocs/lib/home/component/bottom_nav.dart"
+      });
+    },
+    get C15() {
+      return C15 = dart.const({
+        __proto__: icon_data.IconData.prototype,
+        [IconData_matchTextDirection]: false,
+        [IconData_fontPackage]: null,
+        [IconData_fontFamily]: "MaterialIcons",
+        [IconData_codePoint]: 60716
+      });
+    },
+    get C11() {
+      return C11 = dart.const({
+        __proto__: icon.Icon.prototype,
+        [Widget__location]: C12 || CT.C12,
+        [Widget_key]: null,
+        [Icon_textDirection]: null,
+        [Icon_semanticLabel]: null,
+        [Icon_color]: null,
+        [Icon_size]: null,
+        [Icon_icon]: C15 || CT.C15
+      });
+    },
+    get C10() {
+      return C10 = dart.const({
+        __proto__: bottom_navigation_bar_item.BottomNavigationBarItem.prototype,
+        [BottomNavigationBarItem_backgroundColor]: null,
+        [BottomNavigationBarItem_label]: "Trang Chủ",
+        [BottomNavigationBarItem_title]: null,
+        [BottomNavigationBarItem_activeIcon]: C11 || CT.C11,
+        [BottomNavigationBarItem_icon]: C11 || CT.C11
+      });
+    },
+    get C20() {
+      return C20 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 28,
+        [_Location_line]: 45,
+        [_Location_file]: null
+      });
+    },
+    get C19() {
+      return C19 = dart.constList([C20 || CT.C20], _LocationL());
+    },
+    get C18() {
+      return C18 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C19 || CT.C19,
+        [_Location_name]: null,
+        [_Location_column]: 17,
+        [_Location_line]: 45,
+        [_Location_file]: "file:///L:/Work/Logistic/spocs/lib/home/component/bottom_nav.dart"
+      });
+    },
+    get C21() {
+      return C21 = dart.const({
+        __proto__: icon_data.IconData.prototype,
+        [IconData_matchTextDirection]: false,
+        [IconData_fontPackage]: null,
+        [IconData_fontFamily]: "MaterialIcons",
+        [IconData_codePoint]: 60176
+      });
+    },
+    get C17() {
+      return C17 = dart.const({
+        __proto__: icon.Icon.prototype,
+        [Widget__location]: C18 || CT.C18,
+        [Widget_key]: null,
+        [Icon_textDirection]: null,
+        [Icon_semanticLabel]: null,
+        [Icon_color]: null,
+        [Icon_size]: null,
+        [Icon_icon]: C21 || CT.C21
+      });
+    },
+    get C16() {
+      return C16 = dart.const({
+        __proto__: bottom_navigation_bar_item.BottomNavigationBarItem.prototype,
+        [BottomNavigationBarItem_backgroundColor]: null,
+        [BottomNavigationBarItem_label]: "Cá Nhân",
+        [BottomNavigationBarItem_title]: null,
+        [BottomNavigationBarItem_activeIcon]: C17 || CT.C17,
+        [BottomNavigationBarItem_icon]: C17 || CT.C17
+      });
+    },
+    get C3() {
+      return C3 = dart.constList([C4 || CT.C4, C10 || CT.C10, C16 || CT.C16], BottomNavigationBarItemL());
+    },
+    get C24() {
+      return C24 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "items",
+        [_Location_column]: 7,
+        [_Location_line]: 35,
+        [_Location_file]: null
+      });
+    },
+    get C25() {
+      return C25 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "currentIndex",
+        [_Location_column]: 7,
+        [_Location_line]: 49,
+        [_Location_file]: null
+      });
+    },
+    get C26() {
+      return C26 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "selectedItemColor",
+        [_Location_column]: 7,
+        [_Location_line]: 50,
+        [_Location_file]: null
+      });
+    },
+    get C27() {
+      return C27 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onTap",
+        [_Location_column]: 7,
+        [_Location_line]: 51,
+        [_Location_file]: null
+      });
+    },
+    get C23() {
+      return C23 = dart.constList([C24 || CT.C24, C25 || CT.C25, C26 || CT.C26, C27 || CT.C27], _LocationL());
+    },
+    get C22() {
+      return C22 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C23 || CT.C23,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 34,
+        [_Location_file]: "file:///L:/Work/Logistic/spocs/lib/home/component/bottom_nav.dart"
+      });
+    }
+  }, false);
+  bottom_nav.BottomNav = class BottomNav extends framework.StatefulWidget {
+    createState() {
+      return new bottom_nav._BottomNavState.new();
+    }
+  };
+  (bottom_nav.BottomNav.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    bottom_nav.BottomNav.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = bottom_nav.BottomNav.prototype;
+  dart.addTypeTests(bottom_nav.BottomNav);
+  dart.addTypeCaches(bottom_nav.BottomNav);
+  dart.setMethodSignature(bottom_nav.BottomNav, () => ({
+    __proto__: dart.getMethods(bottom_nav.BottomNav.__proto__),
+    createState: dart.fnType(dart.legacy(bottom_nav._BottomNavState), [])
+  }));
+  dart.setLibraryUri(bottom_nav.BottomNav, L0);
+  var C1;
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  var C0;
+  var C2;
+  var _onItemTapped = dart.privateName(bottom_nav, "_onItemTapped");
+  var BottomNavigationBarItem_backgroundColor = dart.privateName(bottom_navigation_bar_item, "BottomNavigationBarItem.backgroundColor");
+  var BottomNavigationBarItem_label = dart.privateName(bottom_navigation_bar_item, "BottomNavigationBarItem.label");
+  var BottomNavigationBarItem_title = dart.privateName(bottom_navigation_bar_item, "BottomNavigationBarItem.title");
+  var C8;
+  var C7;
+  var C6;
+  var Widget__location = dart.privateName(framework, "Widget._location");
+  var Widget_key = dart.privateName(framework, "Widget.key");
+  var Icon_textDirection = dart.privateName(icon, "Icon.textDirection");
+  var Icon_semanticLabel = dart.privateName(icon, "Icon.semanticLabel");
+  var Icon_color = dart.privateName(icon, "Icon.color");
+  var Icon_size = dart.privateName(icon, "Icon.size");
+  var IconData_matchTextDirection = dart.privateName(icon_data, "IconData.matchTextDirection");
+  var IconData_fontPackage = dart.privateName(icon_data, "IconData.fontPackage");
+  var IconData_fontFamily = dart.privateName(icon_data, "IconData.fontFamily");
+  var IconData_codePoint = dart.privateName(icon_data, "IconData.codePoint");
+  var C9;
+  var Icon_icon = dart.privateName(icon, "Icon.icon");
+  var C5;
+  var BottomNavigationBarItem_activeIcon = dart.privateName(bottom_navigation_bar_item, "BottomNavigationBarItem.activeIcon");
+  var BottomNavigationBarItem_icon = dart.privateName(bottom_navigation_bar_item, "BottomNavigationBarItem.icon");
+  var C4;
+  var C14;
+  var C13;
+  var C12;
+  var C15;
+  var C11;
+  var C10;
+  var C20;
+  var C19;
+  var C18;
+  var C21;
+  var C17;
+  var C16;
+  var C3;
+  var C24;
+  var C25;
+  var C26;
+  var C27;
+  var C23;
+  var C22;
+  bottom_nav._BottomNavState = class _BottomNavState extends framework.State$(dart.legacy(bottom_nav.BottomNav)) {
+    [_onItemTapped](index) {
+      this.setState(dart.fn(() => {
+        if (index === 0) {
+          navigator.Navigator.push(dart.dynamic, this.context, new page.MaterialPageRoute.new({builder: dart.fn(context => new detail_screen.DetailScreen.new({$creationLocationd_0dea112b090073317d4: C0 || CT.C0}), BuildContextLToDetailScreenL())}));
+        } else if (index === 2) {
+          navigator.Navigator.push(dart.dynamic, this.context, new page.MaterialPageRoute.new({builder: dart.fn(context => new account_screen.AccountScreen.new({$creationLocationd_0dea112b090073317d4: C2 || CT.C2}), BuildContextLToAccountScreenL())}));
+        }
+      }, VoidToNull()));
+    }
+    build(context) {
+      return new bottom_navigation_bar.BottomNavigationBar.new({items: C3 || CT.C3, currentIndex: 1, selectedItemColor: constants.kPrimaryColor, onTap: dart.bind(this, _onItemTapped), $creationLocationd_0dea112b090073317d4: C22 || CT.C22});
+    }
+  };
+  (bottom_nav._BottomNavState.new = function() {
+    bottom_nav._BottomNavState.__proto__.new.call(this);
+    ;
+  }).prototype = bottom_nav._BottomNavState.prototype;
+  dart.addTypeTests(bottom_nav._BottomNavState);
+  dart.addTypeCaches(bottom_nav._BottomNavState);
+  dart.setMethodSignature(bottom_nav._BottomNavState, () => ({
+    __proto__: dart.getMethods(bottom_nav._BottomNavState.__proto__),
+    [_onItemTapped]: dart.fnType(dart.void, [dart.legacy(core.int)]),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
+  }));
+  dart.setLibraryUri(bottom_nav._BottomNavState, L0);
+  dart.trackLibraries("packages/spocs/home/component/bottom_nav.dart", {
+    "package:spocs/home/component/bottom_nav.dart": bottom_nav
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["bottom_nav.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAYmC;IAAiB;;;QAJ5C;;AACD,wDAAW,GAAG;;EAAC;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;oBAOG;AAYnB,MAXF,cAAS;AACP,YAAI,AAAM,KAAD,KAAI;AAKL,UAJI,uCACN,cACA,yCACW,QAAC,WAAY;cAEvB,KAAI,AAAM,KAAD,KAAI;AAEoD,UAD5D,uCACN,cAAS,yCAA2B,QAAC,WAAY;;;IAG3D;UAG0B;AACxB,YAAO,sFAeS,sBACK,0CACZ;IAEX;;;;;EACF","file":"../../../../../../packages/spocs/home/component/bottom_nav.dart.lib.js"}');
+  // Exports:
+  return {
+    home__component__bottom_nav: bottom_nav
+  };
+}));
+
+//# sourceMappingURL=bottom_nav.dart.lib.js.map

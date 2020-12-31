@@ -1,0 +1,500 @@
+define(['dart_sdk', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/spocs/Model/constants.dart', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter/src/painting/strut_style.dart', 'packages/flutter/src/material/colors.dart', 'packages/flutter/src/widgets/icon.dart', 'packages/flutter/src/material/icons.dart'], (function load__packages__spocs__home__component__appbar_menu_dart(dart_sdk, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__spocs__Model__constants$46dart, packages__flutter__src__painting__edge_insets$46dart, packages__flutter__src__painting__strut_style$46dart, packages__flutter__src__material__colors$46dart, packages__flutter__src__widgets__icon$46dart, packages__flutter__src__material__icons$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const _interceptors = dart_sdk._interceptors;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const drawer = packages__flutter__src__material__icon_button$46dart.src__material__drawer;
+  const flat_button = packages__flutter__src__material__icon_button$46dart.src__material__flat_button;
+  const app_bar = packages__flutter__src__material__icon_button$46dart.src__material__app_bar;
+  const container = packages__flutter__src__widgets__widget_span$46dart.src__widgets__container;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const constants = packages__spocs__Model__constants$46dart.Model__constants;
+  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
+  const text_style = packages__flutter__src__painting__strut_style$46dart.src__painting__text_style;
+  const colors = packages__flutter__src__material__colors$46dart.src__material__colors;
+  const icon = packages__flutter__src__widgets__icon$46dart.src__widgets__icon;
+  const icons = packages__flutter__src__material__icons$46dart.src__material__icons;
+  var appbar_menu = Object.create(dart.library);
+  var _LocationL = () => (_LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))();
+  var VoidToNull = () => (VoidToNull = dart.constFn(dart.fnType(core.Null, [])))();
+  var WidgetL = () => (WidgetL = dart.constFn(dart.legacy(framework.Widget)))();
+  var JSArrayOfWidgetL = () => (JSArrayOfWidgetL = dart.constFn(_interceptors.JSArray$(WidgetL())))();
+  const CT = Object.create(null);
+  var L0 = "package:spocs/home/component/appbar_menu.dart";
+  dart.defineLazy(CT, {
+    get C0() {
+      return C0 = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 20,
+        [EdgeInsets_right]: 0,
+        [EdgeInsets_top]: 0,
+        [EdgeInsets_left]: 0
+      });
+    },
+    get C3() {
+      return C3 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 19,
+        [_Location_line]: 28,
+        [_Location_file]: null
+      });
+    },
+    get C4() {
+      return C4 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 19,
+        [_Location_line]: 29,
+        [_Location_file]: null
+      });
+    },
+    get C2() {
+      return C2 = dart.constList([C3 || CT.C3, C4 || CT.C4], _LocationL());
+    },
+    get C1() {
+      return C1 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C2 || CT.C2,
+        [_Location_name]: null,
+        [_Location_column]: 24,
+        [_Location_line]: 27,
+        [_Location_file]: "file:///L:/Work/Logistic/spocs/lib/home/component/appbar_menu.dart"
+      });
+    },
+    get C7() {
+      return C7 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 25,
+        [_Location_line]: 33,
+        [_Location_file]: null
+      });
+    },
+    get C8() {
+      return C8 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 19,
+        [_Location_line]: 34,
+        [_Location_file]: null
+      });
+    },
+    get C6() {
+      return C6 = dart.constList([C7 || CT.C7, C8 || CT.C8], _LocationL());
+    },
+    get C5() {
+      return C5 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C6 || CT.C6,
+        [_Location_name]: null,
+        [_Location_column]: 23,
+        [_Location_line]: 32,
+        [_Location_file]: "file:///L:/Work/Logistic/spocs/lib/home/component/appbar_menu.dart"
+      });
+    },
+    get C11() {
+      return C11 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "label",
+        [_Location_column]: 17,
+        [_Location_line]: 27,
+        [_Location_file]: null
+      });
+    },
+    get C12() {
+      return C12 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 17,
+        [_Location_line]: 32,
+        [_Location_file]: null
+      });
+    },
+    get C13() {
+      return C13 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 17,
+        [_Location_line]: 36,
+        [_Location_file]: null
+      });
+    },
+    get C10() {
+      return C10 = dart.constList([C11 || CT.C11, C12 || CT.C12, C13 || CT.C13], _LocationL());
+    },
+    get C9() {
+      return C9 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C10 || CT.C10,
+        [_Location_name]: null,
+        [_Location_column]: 33,
+        [_Location_line]: 26,
+        [_Location_file]: "file:///L:/Work/Logistic/spocs/lib/home/component/appbar_menu.dart"
+      });
+    },
+    get C16() {
+      return C16 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 15,
+        [_Location_line]: 25,
+        [_Location_file]: null
+      });
+    },
+    get C17() {
+      return C17 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 15,
+        [_Location_line]: 26,
+        [_Location_file]: null
+      });
+    },
+    get C15() {
+      return C15 = dart.constList([C16 || CT.C16, C17 || CT.C17], _LocationL());
+    },
+    get C14() {
+      return C14 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C15 || CT.C15,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 24,
+        [_Location_file]: "file:///L:/Work/Logistic/spocs/lib/home/component/appbar_menu.dart"
+      });
+    },
+    get C20() {
+      return C20 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 17,
+        [_Location_line]: 41,
+        [_Location_file]: null
+      });
+    },
+    get C21() {
+      return C21 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 17,
+        [_Location_line]: 42,
+        [_Location_file]: null
+      });
+    },
+    get C19() {
+      return C19 = dart.constList([C20 || CT.C20, C21 || CT.C21], _LocationL());
+    },
+    get C18() {
+      return C18 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C19 || CT.C19,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 40,
+        [_Location_file]: "file:///L:/Work/Logistic/spocs/lib/home/component/appbar_menu.dart"
+      });
+    },
+    get C24() {
+      return C24 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 23,
+        [_Location_line]: 46,
+        [_Location_file]: null
+      });
+    },
+    get C25() {
+      return C25 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 17,
+        [_Location_line]: 47,
+        [_Location_file]: null
+      });
+    },
+    get C23() {
+      return C23 = dart.constList([C24 || CT.C24, C25 || CT.C25], _LocationL());
+    },
+    get C22() {
+      return C22 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C23 || CT.C23,
+        [_Location_name]: null,
+        [_Location_column]: 21,
+        [_Location_line]: 45,
+        [_Location_file]: "file:///L:/Work/Logistic/spocs/lib/home/component/appbar_menu.dart"
+      });
+    },
+    get C28() {
+      return C28 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "label",
+        [_Location_column]: 15,
+        [_Location_line]: 40,
+        [_Location_file]: null
+      });
+    },
+    get C29() {
+      return C29 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 15,
+        [_Location_line]: 45,
+        [_Location_file]: null
+      });
+    },
+    get C30() {
+      return C30 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 15,
+        [_Location_line]: 49,
+        [_Location_file]: null
+      });
+    },
+    get C27() {
+      return C27 = dart.constList([C28 || CT.C28, C29 || CT.C29, C30 || CT.C30], _LocationL());
+    },
+    get C26() {
+      return C26 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C27 || CT.C27,
+        [_Location_name]: null,
+        [_Location_column]: 24,
+        [_Location_line]: 39,
+        [_Location_file]: "file:///L:/Work/Logistic/spocs/lib/home/component/appbar_menu.dart"
+      });
+    },
+    get C33() {
+      return C33 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 11,
+        [_Location_line]: 23,
+        [_Location_file]: null
+      });
+    },
+    get C32() {
+      return C32 = dart.constList([C33 || CT.C33], _LocationL());
+    },
+    get C31() {
+      return C31 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C32 || CT.C32,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 22,
+        [_Location_file]: "file:///L:/Work/Logistic/spocs/lib/home/component/appbar_menu.dart"
+      });
+    },
+    get C36() {
+      return C36 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 9,
+        [_Location_line]: 19,
+        [_Location_file]: null
+      });
+    },
+    get C37() {
+      return C37 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "margin",
+        [_Location_column]: 9,
+        [_Location_line]: 20,
+        [_Location_file]: null
+      });
+    },
+    get C38() {
+      return C38 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 9,
+        [_Location_line]: 21,
+        [_Location_file]: null
+      });
+    },
+    get C39() {
+      return C39 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 22,
+        [_Location_file]: null
+      });
+    },
+    get C35() {
+      return C35 = dart.constList([C36 || CT.C36, C37 || CT.C37, C38 || CT.C38, C39 || CT.C39], _LocationL());
+    },
+    get C34() {
+      return C34 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C35 || CT.C35,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 18,
+        [_Location_file]: "file:///L:/Work/Logistic/spocs/lib/home/component/appbar_menu.dart"
+      });
+    },
+    get C42() {
+      return C42 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 18,
+        [_Location_file]: null
+      });
+    },
+    get C41() {
+      return C41 = dart.constList([C42 || CT.C42], _LocationL());
+    },
+    get C40() {
+      return C40 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C41 || CT.C41,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 17,
+        [_Location_file]: "file:///L:/Work/Logistic/spocs/lib/home/component/appbar_menu.dart"
+      });
+    },
+    get C45() {
+      return C45 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "elevation",
+        [_Location_column]: 5,
+        [_Location_line]: 6,
+        [_Location_file]: null
+      });
+    },
+    get C44() {
+      return C44 = dart.constList([C45 || CT.C45], _LocationL());
+    },
+    get C43() {
+      return C43 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C44 || CT.C44,
+        [_Location_name]: null,
+        [_Location_column]: 10,
+        [_Location_line]: 5,
+        [_Location_file]: "file:///L:/Work/Logistic/spocs/lib/home/component/appbar_menu.dart"
+      });
+    }
+  }, false);
+  var EdgeInsets_bottom = dart.privateName(edge_insets, "EdgeInsets.bottom");
+  var EdgeInsets_right = dart.privateName(edge_insets, "EdgeInsets.right");
+  var EdgeInsets_top = dart.privateName(edge_insets, "EdgeInsets.top");
+  var EdgeInsets_left = dart.privateName(edge_insets, "EdgeInsets.left");
+  var C0;
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  var C3;
+  var C4;
+  var C2;
+  var C1;
+  var C7;
+  var C8;
+  var C6;
+  var C5;
+  var C11;
+  var C12;
+  var C13;
+  var C10;
+  var C9;
+  var C16;
+  var C17;
+  var C15;
+  var C14;
+  var C20;
+  var C21;
+  var C19;
+  var C18;
+  var C24;
+  var C25;
+  var C23;
+  var C22;
+  var C28;
+  var C29;
+  var C30;
+  var C27;
+  var C26;
+  var C33;
+  var C32;
+  var C31;
+  var C36;
+  var C37;
+  var C38;
+  var C39;
+  var C35;
+  var C34;
+  var C42;
+  var C41;
+  var C40;
+  appbar_menu.DrawerMenu = class DrawerMenu extends framework.StatelessWidget {
+    build(context) {
+      return new drawer.Drawer.new({child: new container.Container.new({color: constants.kPrimaryColor, margin: new edge_insets.EdgeInsets.only({top: 20 * 8}), padding: new edge_insets.EdgeInsets.only({top: 20}), child: new basic.Column.new({children: JSArrayOfWidgetL().of([new basic.Padding.new({padding: C0 || CT.C0, child: new flat_button._FlatButtonWithIcon.new({label: new text.Text.new("Cá Nhân", {style: new text_style.TextStyle.new({color: colors.Colors.white, fontSize: 18.0, letterSpacing: 1.5}), $creationLocationd_0dea112b090073317d4: C1 || CT.C1}), icon: new icon.Icon.new(icons.Icons.account_box, {color: colors.Colors.white, $creationLocationd_0dea112b090073317d4: C5 || CT.C5}), onPressed: dart.fn(() => {
+                  }, VoidToNull()), $creationLocationd_0dea112b090073317d4: C9 || CT.C9}), $creationLocationd_0dea112b090073317d4: C14 || CT.C14}), new flat_button._FlatButtonWithIcon.new({label: new text.Text.new("Chi Tiết", {style: new text_style.TextStyle.new({color: colors.Colors.white, fontSize: 18.0, letterSpacing: 1.5}), $creationLocationd_0dea112b090073317d4: C18 || CT.C18}), icon: new icon.Icon.new(icons.Icons.account_tree, {color: colors.Colors.white, $creationLocationd_0dea112b090073317d4: C22 || CT.C22}), onPressed: dart.fn(() => {
+                }, VoidToNull()), $creationLocationd_0dea112b090073317d4: C26 || CT.C26})]), $creationLocationd_0dea112b090073317d4: C31 || CT.C31}), $creationLocationd_0dea112b090073317d4: C34 || CT.C34}), $creationLocationd_0dea112b090073317d4: C40 || CT.C40});
+    }
+  };
+  (appbar_menu.DrawerMenu.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    appbar_menu.DrawerMenu.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = appbar_menu.DrawerMenu.prototype;
+  dart.addTypeTests(appbar_menu.DrawerMenu);
+  dart.addTypeCaches(appbar_menu.DrawerMenu);
+  dart.setMethodSignature(appbar_menu.DrawerMenu, () => ({
+    __proto__: dart.getMethods(appbar_menu.DrawerMenu.__proto__),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
+  }));
+  dart.setLibraryUri(appbar_menu.DrawerMenu, L0);
+  var C45;
+  var C44;
+  var C43;
+  appbar_menu.buildAppBar = function buildAppBar() {
+    return new app_bar.AppBar.new({elevation: 0.0, $creationLocationd_0dea112b090073317d4: C43 || CT.C43});
+  };
+  dart.trackLibraries("packages/spocs/home/component/appbar_menu.dart", {
+    "package:spocs/home/component/appbar_menu.dart": appbar_menu
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["appbar_menu.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;UAe4B;AACxB,YAAO,+BACE,oCACE,iCACY,sCAAyB,KAAE,cAC1B,mDACb,gCACK,uBACR,oDAEoB,gDACT,kBACL,mBACO,qCACW,+BAAiB,qBAAmB,oEAElD,kBACE,iCACQ,uFAEL;oJAGJ,gDACF,kBACL,oBACO,qCACW,+BAAiB,qBAAmB,sEAElD,kBACE,kCACQ,yFAEL;;IAMvB;;;QA3CM;;AACD,0DAAW,GAAG;;EAAC;;;;;;;;;;;;AARpB,UAAO,oCACM;EAEf","file":"../../../../../../packages/spocs/home/component/appbar_menu.dart.lib.js"}');
+  // Exports:
+  return {
+    home__component__appbar_menu: appbar_menu
+  };
+}));
+
+//# sourceMappingURL=appbar_menu.dart.lib.js.map

@@ -1,0 +1,1011 @@
+define(['dart_sdk', 'packages/path_parsing/src/path_segment_type.dart', 'packages/vector_math/vector_math.dart'], (function load__packages__path_parsing__src__path_parsing_dart(dart_sdk, packages__path_parsing__src__path_segment_type$46dart, packages__vector_math__vector_math$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const math = dart_sdk.math;
+  const _js_helper = dart_sdk._js_helper;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const path_segment_type = packages__path_parsing__src__path_segment_type$46dart.src__path_segment_type;
+  const vector_math = packages__vector_math__vector_math$46dart.vector_math;
+  var path_parsing = Object.create(dart.library);
+  var $hashCode = dartx.hashCode;
+  var $toString = dartx.toString;
+  var $_equals = dartx._equals;
+  var $codeUnits = dartx.codeUnits;
+  var $length = dartx.length;
+  var $_get = dartx._get;
+  var $abs = dartx.abs;
+  var $isFinite = dartx.isFinite;
+  var $ceil = dartx.ceil;
+  var _PathOffsetL = () => (_PathOffsetL = dart.constFn(dart.legacy(path_parsing._PathOffset)))();
+  var PathSegmentDataL = () => (PathSegmentDataL = dart.constFn(dart.legacy(path_parsing.PathSegmentData)))();
+  var SyncIterableOfPathSegmentDataL = () => (SyncIterableOfPathSegmentDataL = dart.constFn(_js_helper.SyncIterable$(PathSegmentDataL())))();
+  var doubleL = () => (doubleL = dart.constFn(dart.legacy(core.double)))();
+  const CT = Object.create(null);
+  var L1 = "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/path_parsing-0.1.4/lib/src/path_parsing.dart";
+  var L0 = "package:path_parsing/src/path_parsing.dart";
+  dart.defineLazy(CT, {
+    get C0() {
+      return C0 = dart.const({
+        __proto__: path_parsing._PathOffset.prototype,
+        [_PathOffset_dy]: 0,
+        [_PathOffset_dx]: 0
+      });
+    },
+    get C1() {
+      return C1 = dart.const({
+        __proto__: path_segment_type.SvgPathSegType.prototype,
+        [_name]: "SvgPathSegType.smoothCubicToRel",
+        index: 17
+      });
+    },
+    get C2() {
+      return C2 = dart.const({
+        __proto__: path_segment_type.SvgPathSegType.prototype,
+        [_name]: "SvgPathSegType.cubicToRel",
+        index: 7
+      });
+    },
+    get C3() {
+      return C3 = dart.const({
+        __proto__: path_segment_type.SvgPathSegType.prototype,
+        [_name]: "SvgPathSegType.cubicToAbs",
+        index: 6
+      });
+    },
+    get C4() {
+      return C4 = dart.const({
+        __proto__: path_segment_type.SvgPathSegType.prototype,
+        [_name]: "SvgPathSegType.moveToRel",
+        index: 3
+      });
+    },
+    get C5() {
+      return C5 = dart.const({
+        __proto__: path_segment_type.SvgPathSegType.prototype,
+        [_name]: "SvgPathSegType.smoothCubicToAbs",
+        index: 16
+      });
+    },
+    get C6() {
+      return C6 = dart.const({
+        __proto__: path_segment_type.SvgPathSegType.prototype,
+        [_name]: "SvgPathSegType.moveToAbs",
+        index: 2
+      });
+    },
+    get C7() {
+      return C7 = dart.const({
+        __proto__: path_segment_type.SvgPathSegType.prototype,
+        [_name]: "SvgPathSegType.lineToRel",
+        index: 5
+      });
+    },
+    get C8() {
+      return C8 = dart.const({
+        __proto__: path_segment_type.SvgPathSegType.prototype,
+        [_name]: "SvgPathSegType.lineToAbs",
+        index: 4
+      });
+    },
+    get C9() {
+      return C9 = dart.const({
+        __proto__: path_segment_type.SvgPathSegType.prototype,
+        [_name]: "SvgPathSegType.smoothQuadToRel",
+        index: 19
+      });
+    },
+    get C10() {
+      return C10 = dart.const({
+        __proto__: path_segment_type.SvgPathSegType.prototype,
+        [_name]: "SvgPathSegType.smoothQuadToAbs",
+        index: 18
+      });
+    },
+    get C11() {
+      return C11 = dart.const({
+        __proto__: path_segment_type.SvgPathSegType.prototype,
+        [_name]: "SvgPathSegType.lineToHorizontalRel",
+        index: 13
+      });
+    },
+    get C12() {
+      return C12 = dart.const({
+        __proto__: path_segment_type.SvgPathSegType.prototype,
+        [_name]: "SvgPathSegType.lineToHorizontalAbs",
+        index: 12
+      });
+    },
+    get C13() {
+      return C13 = dart.const({
+        __proto__: path_segment_type.SvgPathSegType.prototype,
+        [_name]: "SvgPathSegType.lineToVerticalRel",
+        index: 15
+      });
+    },
+    get C14() {
+      return C14 = dart.const({
+        __proto__: path_segment_type.SvgPathSegType.prototype,
+        [_name]: "SvgPathSegType.lineToVerticalAbs",
+        index: 14
+      });
+    },
+    get C15() {
+      return C15 = dart.const({
+        __proto__: path_segment_type.SvgPathSegType.prototype,
+        [_name]: "SvgPathSegType.close",
+        index: 1
+      });
+    },
+    get C16() {
+      return C16 = dart.const({
+        __proto__: path_segment_type.SvgPathSegType.prototype,
+        [_name]: "SvgPathSegType.quadToRel",
+        index: 9
+      });
+    },
+    get C17() {
+      return C17 = dart.const({
+        __proto__: path_segment_type.SvgPathSegType.prototype,
+        [_name]: "SvgPathSegType.quadToAbs",
+        index: 8
+      });
+    },
+    get C18() {
+      return C18 = dart.const({
+        __proto__: path_segment_type.SvgPathSegType.prototype,
+        [_name]: "SvgPathSegType.arcToRel",
+        index: 11
+      });
+    },
+    get C19() {
+      return C19 = dart.const({
+        __proto__: path_segment_type.SvgPathSegType.prototype,
+        [_name]: "SvgPathSegType.arcToAbs",
+        index: 10
+      });
+    },
+    get C20() {
+      return C20 = dart.const({
+        __proto__: path_segment_type.SvgPathSegType.prototype,
+        [_name]: "SvgPathSegType.unknown",
+        index: 0
+      });
+    }
+  }, false);
+  path_parsing.PathProxy = class PathProxy extends core.Object {};
+  (path_parsing.PathProxy.new = function() {
+    ;
+  }).prototype = path_parsing.PathProxy.prototype;
+  dart.addTypeTests(path_parsing.PathProxy);
+  dart.addTypeCaches(path_parsing.PathProxy);
+  dart.setLibraryUri(path_parsing.PathProxy, L0);
+  var _PathOffset_dy = dart.privateName(path_parsing, "_PathOffset.dy");
+  var _PathOffset_dx = dart.privateName(path_parsing, "_PathOffset.dx");
+  var C0;
+  path_parsing._PathOffset = class _PathOffset extends core.Object {
+    get dx() {
+      return this[dx$];
+    }
+    set dx(value) {
+      super.dx = value;
+    }
+    get dy() {
+      return this[dy$];
+    }
+    set dy(value) {
+      super.dy = value;
+    }
+    static get zero() {
+      return C0 || CT.C0;
+    }
+    get direction() {
+      return math.atan2(this.dy, this.dx);
+    }
+    translate(translateX, translateY) {
+      return new path_parsing._PathOffset.new(dart.notNull(this.dx) + dart.notNull(translateX), dart.notNull(this.dy) + dart.notNull(translateY));
+    }
+    ['+'](other) {
+      return new path_parsing._PathOffset.new(dart.notNull(this.dx) + dart.notNull(other.dx), dart.notNull(this.dy) + dart.notNull(other.dy));
+    }
+    ['-'](other) {
+      return new path_parsing._PathOffset.new(dart.notNull(this.dx) - dart.notNull(other.dx), dart.notNull(this.dy) - dart.notNull(other.dy));
+    }
+    ['*'](operand) {
+      return new path_parsing._PathOffset.new(dart.notNull(this.dx) * dart.notNull(operand), dart.notNull(this.dy) * dart.notNull(operand));
+    }
+    toString() {
+      return "PathOffset{" + dart.str(this.dx) + "," + dart.str(this.dy) + "}";
+    }
+    _equals(other) {
+      if (other == null) return false;
+      return _PathOffsetL().is(other) && other.dx == this.dx && other.dy == this.dy;
+    }
+    get hashCode() {
+      return (((17 * 23 ^ dart.hashCode(this.dx)) >>> 0) * 23 ^ dart.hashCode(this.dy)) >>> 0;
+    }
+  };
+  (path_parsing._PathOffset.new = function(dx, dy) {
+    this[dx$] = dx;
+    this[dy$] = dy;
+    if (!(dx != null)) dart.assertFailed(null, L1, 53, 16, "dx != null");
+    if (!(dy != null)) dart.assertFailed(null, L1, 54, 16, "dy != null");
+    ;
+  }).prototype = path_parsing._PathOffset.prototype;
+  dart.addTypeTests(path_parsing._PathOffset);
+  dart.addTypeCaches(path_parsing._PathOffset);
+  const dx$ = _PathOffset_dx;
+  const dy$ = _PathOffset_dy;
+  dart.setMethodSignature(path_parsing._PathOffset, () => ({
+    __proto__: dart.getMethods(path_parsing._PathOffset.__proto__),
+    translate: dart.fnType(dart.legacy(path_parsing._PathOffset), [dart.legacy(core.double), dart.legacy(core.double)]),
+    '+': dart.fnType(dart.legacy(path_parsing._PathOffset), [dart.legacy(path_parsing._PathOffset)]),
+    '-': dart.fnType(dart.legacy(path_parsing._PathOffset), [dart.legacy(path_parsing._PathOffset)]),
+    '*': dart.fnType(dart.legacy(path_parsing._PathOffset), [dart.legacy(core.double)]),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), []),
+    _equals: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object)]),
+    [$_equals]: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object)])
+  }));
+  dart.setGetterSignature(path_parsing._PathOffset, () => ({
+    __proto__: dart.getGetters(path_parsing._PathOffset.__proto__),
+    direction: dart.legacy(core.double),
+    hashCode: dart.legacy(core.int),
+    [$hashCode]: dart.legacy(core.int)
+  }));
+  dart.setLibraryUri(path_parsing._PathOffset, L0);
+  dart.setFieldSignature(path_parsing._PathOffset, () => ({
+    __proto__: dart.getFields(path_parsing._PathOffset.__proto__),
+    dx: dart.finalFieldType(dart.legacy(core.double)),
+    dy: dart.finalFieldType(dart.legacy(core.double))
+  }));
+  dart.defineExtensionMethods(path_parsing._PathOffset, ['toString', '_equals']);
+  dart.defineExtensionAccessors(path_parsing._PathOffset, ['hashCode']);
+  var _previousCommand = dart.privateName(path_parsing, "_previousCommand");
+  var _codePoints = dart.privateName(path_parsing, "_codePoints");
+  var _idx = dart.privateName(path_parsing, "_idx");
+  var _skipOptionalSvgSpaces = dart.privateName(path_parsing, "_skipOptionalSvgSpaces");
+  var _isHtmlSpace = dart.privateName(path_parsing, "_isHtmlSpace");
+  var _skipOptionalSvgSpacesOrDelimiter = dart.privateName(path_parsing, "_skipOptionalSvgSpacesOrDelimiter");
+  var _isNumberStart = dart.privateName(path_parsing, "_isNumberStart");
+  var _maybeImplicitCommand = dart.privateName(path_parsing, "_maybeImplicitCommand");
+  var _isValidRange = dart.privateName(path_parsing, "_isValidRange");
+  var _isValidExponent = dart.privateName(path_parsing, "_isValidExponent");
+  var _parseNumber = dart.privateName(path_parsing, "_parseNumber");
+  var _parseArcFlag = dart.privateName(path_parsing, "_parseArcFlag");
+  var _name = dart.privateName(path_segment_type, "_name");
+  var C1;
+  var C2;
+  var C3;
+  var C4;
+  var C5;
+  var C6;
+  var C7;
+  var C8;
+  var C9;
+  var C10;
+  var C11;
+  var C12;
+  var C13;
+  var C14;
+  var C15;
+  var C16;
+  var C17;
+  var C18;
+  var C19;
+  var C20;
+  path_parsing.SvgPathStringSource = class SvgPathStringSource extends core.Object {
+    [_isHtmlSpace](character) {
+      return dart.notNull(character) <= 32 && (character === 32 || character === 10 || character === 9 || character === 13 || character === 12);
+    }
+    [_skipOptionalSvgSpaces]() {
+      while (dart.notNull(this[_idx]) < dart.notNull(this[_codePoints][$length]) && dart.test(this[_isHtmlSpace](this[_codePoints][$_get](this[_idx])))) {
+        this[_idx] = dart.notNull(this[_idx]) + 1;
+      }
+      return dart.notNull(this[_idx]) < dart.notNull(this[_codePoints][$length]);
+    }
+    [_skipOptionalSvgSpacesOrDelimiter](delimiter = 44) {
+      if (dart.notNull(this[_idx]) < dart.notNull(this[_codePoints][$length]) && !dart.test(this[_isHtmlSpace](this[_codePoints][$_get](this[_idx]))) && this[_codePoints][$_get](this[_idx]) != delimiter) {
+        return false;
+      }
+      if (dart.test(this[_skipOptionalSvgSpaces]())) {
+        if (dart.notNull(this[_idx]) < dart.notNull(this[_codePoints][$length]) && this[_codePoints][$_get](this[_idx]) == delimiter) {
+          this[_idx] = dart.notNull(this[_idx]) + 1;
+          this[_skipOptionalSvgSpaces]();
+        }
+      }
+      return dart.notNull(this[_idx]) < dart.notNull(this[_codePoints][$length]);
+    }
+    [_isNumberStart](lookahead) {
+      return dart.notNull(lookahead) >= 48 && dart.notNull(lookahead) <= 57 || lookahead === 43 || lookahead === 45 || lookahead === 46;
+    }
+    [_maybeImplicitCommand](lookahead, nextCommand) {
+      if (!dart.test(this[_isNumberStart](lookahead)) || this[_previousCommand] == path_segment_type.SvgPathSegType.close) return nextCommand;
+      if (this[_previousCommand] == path_segment_type.SvgPathSegType.moveToAbs) {
+        return path_segment_type.SvgPathSegType.lineToAbs;
+      }
+      if (this[_previousCommand] == path_segment_type.SvgPathSegType.moveToRel) {
+        return path_segment_type.SvgPathSegType.lineToRel;
+      }
+      return this[_previousCommand];
+    }
+    [_isValidRange](x) {
+      return dart.notNull(x) >= -1.7976931348623157e+308 && dart.notNull(x) <= 1.7976931348623157e+308;
+    }
+    [_isValidExponent](x) {
+      return dart.notNull(x) >= -37 && dart.notNull(x) <= 38;
+    }
+    [_parseNumber]() {
+      let t0, t0$;
+      this[_skipOptionalSvgSpaces]();
+      let sign = 1;
+      let end = this[_codePoints][$length];
+      if (dart.notNull(this[_idx]) < dart.notNull(end) && this[_codePoints][$_get](this[_idx]) === 43)
+        this[_idx] = dart.notNull(this[_idx]) + 1;
+      else if (dart.notNull(this[_idx]) < dart.notNull(end) && this[_codePoints][$_get](this[_idx]) === 45) {
+        this[_idx] = dart.notNull(this[_idx]) + 1;
+        sign = -1;
+      }
+      if (this[_idx] == end || (dart.notNull(this[_codePoints][$_get](this[_idx])) < 48 || dart.notNull(this[_codePoints][$_get](this[_idx])) > 57) && this[_codePoints][$_get](this[_idx]) !== 46) dart.throw(new core.StateError.new("First character of a number must be one of [0-9+-.]"));
+      let digitsStart = this[_idx];
+      while (dart.notNull(this[_idx]) < dart.notNull(end) && dart.notNull(this[_codePoints][$_get](this[_idx])) >= 48 && dart.notNull(this[_codePoints][$_get](this[_idx])) <= 57)
+        this[_idx] = dart.notNull(this[_idx]) + 1;
+      let integer = 0.0;
+      if (this[_idx] != digitsStart) {
+        let ptrScanIntPart = dart.notNull(this[_idx]) - 1;
+        let multiplier = 1;
+        while (ptrScanIntPart >= dart.notNull(digitsStart)) {
+          integer = integer + multiplier * (dart.notNull(this[_codePoints][$_get]((t0 = ptrScanIntPart, ptrScanIntPart = t0 - 1, t0))) - 48);
+          multiplier = multiplier * 10;
+        }
+        if (!dart.test(this[_isValidRange](integer))) {
+          dart.throw(new core.StateError.new("Numeric overflow"));
+        }
+      }
+      let decimal = 0.0;
+      if (dart.notNull(this[_idx]) < dart.notNull(end) && this[_codePoints][$_get](this[_idx]) === 46) {
+        this[_idx] = dart.notNull(this[_idx]) + 1;
+        if (dart.notNull(this[_idx]) >= dart.notNull(end) || dart.notNull(this[_codePoints][$_get](this[_idx])) < 48 || dart.notNull(this[_codePoints][$_get](this[_idx])) > 57) dart.throw(new core.StateError.new("There must be at least one digit following the ."));
+        let frac = 1.0;
+        while (dart.notNull(this[_idx]) < dart.notNull(end) && dart.notNull(this[_codePoints][$_get](this[_idx])) >= 48 && dart.notNull(this[_codePoints][$_get](this[_idx])) <= 57) {
+          frac = frac * 0.1;
+          decimal = decimal + (dart.notNull(this[_codePoints][$_get]((t0$ = this[_idx], this[_idx] = dart.notNull(t0$) + 1, t0$))) - 48) * frac;
+        }
+      }
+      if (!(digitsStart != this[_idx])) dart.assertFailed(null, L1, 251, 12, "digitsStart != _idx");
+      let number = integer + decimal;
+      number = number * sign;
+      if (dart.notNull(this[_idx]) + 1 < dart.notNull(end) && (this[_codePoints][$_get](this[_idx]) === 101 || this[_codePoints][$_get](this[_idx]) === 69) && this[_codePoints][$_get](dart.notNull(this[_idx]) + 1) !== 120 && this[_codePoints][$_get](dart.notNull(this[_idx]) + 1) !== 109) {
+        this[_idx] = dart.notNull(this[_idx]) + 1;
+        let exponentIsNegative = false;
+        if (this[_codePoints][$_get](this[_idx]) === 43)
+          this[_idx] = dart.notNull(this[_idx]) + 1;
+        else if (this[_codePoints][$_get](this[_idx]) === 45) {
+          this[_idx] = dart.notNull(this[_idx]) + 1;
+          exponentIsNegative = true;
+        }
+        if (dart.notNull(this[_idx]) >= dart.notNull(end) || dart.notNull(this[_codePoints][$_get](this[_idx])) < 48 || dart.notNull(this[_codePoints][$_get](this[_idx])) > 57) dart.throw(new core.StateError.new("Missing exponent"));
+        let exponent = 0.0;
+        while (dart.notNull(this[_idx]) < dart.notNull(end) && dart.notNull(this[_codePoints][$_get](this[_idx])) >= 48 && dart.notNull(this[_codePoints][$_get](this[_idx])) <= 57) {
+          exponent = exponent * 10.0;
+          exponent = exponent + (dart.notNull(this[_codePoints][$_get](this[_idx])) - 48);
+          this[_idx] = dart.notNull(this[_idx]) + 1;
+        }
+        if (exponentIsNegative) {
+          exponent = -exponent;
+        }
+        if (!dart.test(this[_isValidExponent](exponent))) {
+          dart.throw(new core.StateError.new("Invalid exponent " + dart.str(exponent)));
+        }
+        if (exponent !== 0) {
+          number = number * math.pow(10.0, exponent);
+        }
+      }
+      if (!dart.test(this[_isValidRange](number))) {
+        dart.throw(new core.StateError.new("Numeric overflow"));
+      }
+      this[_skipOptionalSvgSpacesOrDelimiter]();
+      return number;
+    }
+    [_parseArcFlag]() {
+      if (!dart.test(this.hasMoreData)) {
+        dart.throw(new core.StateError.new("Expected more data"));
+      }
+      let flagChar = this[_codePoints][$_get](this[_idx]);
+      this[_idx] = dart.notNull(this[_idx]) + 1;
+      this[_skipOptionalSvgSpacesOrDelimiter]();
+      if (flagChar === 48)
+        return false;
+      else if (flagChar === 49)
+        return true;
+      else
+        dart.throw(new core.StateError.new("Invalid flag value"));
+    }
+    get hasMoreData() {
+      return dart.notNull(this[_idx]) < dart.notNull(this[_codePoints][$length]);
+    }
+    parseSegments() {
+      return new (SyncIterableOfPathSegmentDataL()).new((function* parseSegments() {
+        while (dart.test(this.hasMoreData)) {
+          yield this.parseSegment();
+        }
+      }).bind(this));
+    }
+    parseSegment() {
+      let t0, t0$, t0$0, t0$1;
+      if (!dart.test(this.hasMoreData)) dart.assertFailed(null, L1, 335, 12, "hasMoreData");
+      let segment = new path_parsing.PathSegmentData.new();
+      let lookahead = this[_codePoints][$_get](this[_idx]);
+      let command = path_segment_type.AsciiConstants.mapLetterToSegmentType(lookahead);
+      if (this[_previousCommand] == path_segment_type.SvgPathSegType.unknown) {
+        if (command != path_segment_type.SvgPathSegType.moveToRel && command != path_segment_type.SvgPathSegType.moveToAbs) {
+          dart.throw(new core.StateError.new("Expected to find moveTo command"));
+        }
+        this[_idx] = dart.notNull(this[_idx]) + 1;
+      } else if (command == path_segment_type.SvgPathSegType.unknown) {
+        if (!(this[_previousCommand] != path_segment_type.SvgPathSegType.unknown)) dart.assertFailed(null, L1, 351, 14, "_previousCommand != SvgPathSegType.unknown");
+        command = this[_maybeImplicitCommand](lookahead, command);
+        if (command == null || command == path_segment_type.SvgPathSegType.unknown) {
+          dart.throw(new core.StateError.new("Expected a path command"));
+        }
+      } else {
+        this[_idx] = dart.notNull(this[_idx]) + 1;
+      }
+      segment.command = this[_previousCommand] = command;
+      let labelState = segment.command;
+      SL0:
+        while (true) {
+          switch (labelState) {
+            case C2 || CT.C2:
+            case C3 || CT.C3:
+            {
+              segment.point1 = new path_parsing._PathOffset.new(this[_parseNumber](), this[_parseNumber]());
+              labelState = C1 || CT.C1;
+              continue SL0;
+            }
+            case C1 || CT.C1:
+            case C5 || CT.C5:
+            {
+              segment.point2 = new path_parsing._PathOffset.new(this[_parseNumber](), this[_parseNumber]());
+              labelState = C4 || CT.C4;
+              continue SL0;
+            }
+            case C4 || CT.C4:
+            case C6 || CT.C6:
+            case C7 || CT.C7:
+            case C8 || CT.C8:
+            case C9 || CT.C9:
+            case C10 || CT.C10:
+            {
+              segment.targetPoint = new path_parsing._PathOffset.new(this[_parseNumber](), this[_parseNumber]());
+              break SL0;
+            }
+            case C11 || CT.C11:
+            case C12 || CT.C12:
+            {
+              segment.targetPoint = new path_parsing._PathOffset.new(this[_parseNumber](), (t0$ = (t0 = segment.targetPoint, t0 == null ? null : t0.dy), t0$ == null ? 0.0 : t0$));
+              break SL0;
+            }
+            case C13 || CT.C13:
+            case C14 || CT.C14:
+            {
+              segment.targetPoint = new path_parsing._PathOffset.new((t0$1 = (t0$0 = segment.targetPoint, t0$0 == null ? null : t0$0.dx), t0$1 == null ? 0.0 : t0$1), this[_parseNumber]());
+              break SL0;
+            }
+            case C15 || CT.C15:
+            {
+              this[_skipOptionalSvgSpaces]();
+              break SL0;
+            }
+            case C16 || CT.C16:
+            case C17 || CT.C17:
+            {
+              segment.point1 = new path_parsing._PathOffset.new(this[_parseNumber](), this[_parseNumber]());
+              segment.targetPoint = new path_parsing._PathOffset.new(this[_parseNumber](), this[_parseNumber]());
+              break SL0;
+            }
+            case C18 || CT.C18:
+            case C19 || CT.C19:
+            {
+              segment.point1 = new path_parsing._PathOffset.new(this[_parseNumber](), this[_parseNumber]());
+              segment.arcAngle = this[_parseNumber]();
+              segment.arcLarge = this[_parseArcFlag]();
+              segment.arcSweep = this[_parseArcFlag]();
+              segment.targetPoint = new path_parsing._PathOffset.new(this[_parseNumber](), this[_parseNumber]());
+              break SL0;
+            }
+            case C20 || CT.C20:
+            {
+              dart.throw(new core.StateError.new("Unknown segment command"));
+              break SL0;
+            }
+          }
+          break;
+        }
+      return segment;
+    }
+  };
+  (path_parsing.SvgPathStringSource.new = function(string) {
+    this[_previousCommand] = null;
+    this[_codePoints] = null;
+    this[_idx] = null;
+    if (!(string != null)) dart.assertFailed(null, L1, 92, 47, "string != null");
+    this[_previousCommand] = path_segment_type.SvgPathSegType.unknown;
+    this[_codePoints] = string[$codeUnits];
+    this[_idx] = 0;
+    this[_skipOptionalSvgSpaces]();
+  }).prototype = path_parsing.SvgPathStringSource.prototype;
+  dart.addTypeTests(path_parsing.SvgPathStringSource);
+  dart.addTypeCaches(path_parsing.SvgPathStringSource);
+  dart.setMethodSignature(path_parsing.SvgPathStringSource, () => ({
+    __proto__: dart.getMethods(path_parsing.SvgPathStringSource.__proto__),
+    [_isHtmlSpace]: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.int)]),
+    [_skipOptionalSvgSpaces]: dart.fnType(dart.legacy(core.bool), []),
+    [_skipOptionalSvgSpacesOrDelimiter]: dart.fnType(dart.legacy(core.bool), [], [dart.legacy(core.int)]),
+    [_isNumberStart]: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.int)]),
+    [_maybeImplicitCommand]: dart.fnType(dart.legacy(path_segment_type.SvgPathSegType), [dart.legacy(core.int), dart.legacy(path_segment_type.SvgPathSegType)]),
+    [_isValidRange]: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.double)]),
+    [_isValidExponent]: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.double)]),
+    [_parseNumber]: dart.fnType(dart.legacy(core.double), []),
+    [_parseArcFlag]: dart.fnType(dart.legacy(core.bool), []),
+    parseSegments: dart.fnType(dart.legacy(core.Iterable$(dart.legacy(path_parsing.PathSegmentData))), []),
+    parseSegment: dart.fnType(dart.legacy(path_parsing.PathSegmentData), [])
+  }));
+  dart.setGetterSignature(path_parsing.SvgPathStringSource, () => ({
+    __proto__: dart.getGetters(path_parsing.SvgPathStringSource.__proto__),
+    hasMoreData: dart.legacy(core.bool)
+  }));
+  dart.setLibraryUri(path_parsing.SvgPathStringSource, L0);
+  dart.setFieldSignature(path_parsing.SvgPathStringSource, () => ({
+    __proto__: dart.getFields(path_parsing.SvgPathStringSource.__proto__),
+    [_previousCommand]: dart.fieldType(dart.legacy(path_segment_type.SvgPathSegType)),
+    [_codePoints]: dart.fieldType(dart.legacy(core.List$(dart.legacy(core.int)))),
+    [_idx]: dart.fieldType(dart.legacy(core.int))
+  }));
+  path_parsing.OffsetHelper = class OffsetHelper extends core.Object {
+    static reflectedPoint(reflectedIn, pointToReflect) {
+      return new path_parsing._PathOffset.new(2 * dart.notNull(reflectedIn.dx) - dart.notNull(pointToReflect.dx), 2 * dart.notNull(reflectedIn.dy) - dart.notNull(pointToReflect.dy));
+    }
+    static blendPoints(p1, p2) {
+      return new path_parsing._PathOffset.new((dart.notNull(p1.dx) + 2 * dart.notNull(p2.dx)) * 0.3333333333333333, (dart.notNull(p1.dy) + 2 * dart.notNull(p2.dy)) * 0.3333333333333333);
+    }
+  };
+  (path_parsing.OffsetHelper.new = function() {
+    ;
+  }).prototype = path_parsing.OffsetHelper.prototype;
+  dart.addTypeTests(path_parsing.OffsetHelper);
+  dart.addTypeCaches(path_parsing.OffsetHelper);
+  dart.setLibraryUri(path_parsing.OffsetHelper, L0);
+  dart.defineLazy(path_parsing.OffsetHelper, {
+    /*path_parsing.OffsetHelper._kOneOverThree*/get _kOneOverThree() {
+      return 0.3333333333333333;
+    }
+  }, true);
+  var command = dart.privateName(path_parsing, "PathSegmentData.command");
+  var targetPoint = dart.privateName(path_parsing, "PathSegmentData.targetPoint");
+  var point1 = dart.privateName(path_parsing, "PathSegmentData.point1");
+  var point2 = dart.privateName(path_parsing, "PathSegmentData.point2");
+  var arcSweep = dart.privateName(path_parsing, "PathSegmentData.arcSweep");
+  var arcLarge = dart.privateName(path_parsing, "PathSegmentData.arcLarge");
+  path_parsing.PathSegmentData = class PathSegmentData extends core.Object {
+    get command() {
+      return this[command];
+    }
+    set command(value) {
+      this[command] = value;
+    }
+    get targetPoint() {
+      return this[targetPoint];
+    }
+    set targetPoint(value) {
+      this[targetPoint] = value;
+    }
+    get point1() {
+      return this[point1];
+    }
+    set point1(value) {
+      this[point1] = value;
+    }
+    get point2() {
+      return this[point2];
+    }
+    set point2(value) {
+      this[point2] = value;
+    }
+    get arcSweep() {
+      return this[arcSweep];
+    }
+    set arcSweep(value) {
+      this[arcSweep] = value;
+    }
+    get arcLarge() {
+      return this[arcLarge];
+    }
+    set arcLarge(value) {
+      this[arcLarge] = value;
+    }
+    get arcRadii() {
+      return this.point1;
+    }
+    get arcAngle() {
+      return this.point2.dx;
+    }
+    set arcAngle(angle) {
+      let t0, t0$;
+      return this.point2 = new path_parsing._PathOffset.new(angle, (t0$ = (t0 = this.point2, t0 == null ? null : t0.dy), t0$ == null ? 0.0 : t0$));
+    }
+    get r1() {
+      return this.arcRadii.dx;
+    }
+    get r2() {
+      return this.arcRadii.dy;
+    }
+    get largeArcFlag() {
+      return this.arcLarge;
+    }
+    get sweepFlag() {
+      return this.arcSweep;
+    }
+    get x() {
+      return this.targetPoint.dx;
+    }
+    get y() {
+      return this.targetPoint.dy;
+    }
+    get x1() {
+      return this.point1.dx;
+    }
+    get y1() {
+      return this.point1.dy;
+    }
+    get x2() {
+      return this.point2.dx;
+    }
+    get y2() {
+      return this.point2.dy;
+    }
+    toString() {
+      return "PathSegmentData{" + dart.str(this.command) + " " + dart.str(this.targetPoint) + " " + dart.str(this.point1) + " " + dart.str(this.point2) + " " + dart.str(this.arcSweep) + " " + dart.str(this.arcLarge) + "}";
+    }
+  };
+  (path_parsing.PathSegmentData.new = function() {
+    this[targetPoint] = null;
+    this[point1] = null;
+    this[point2] = null;
+    this[command] = path_segment_type.SvgPathSegType.unknown;
+    this[arcSweep] = false;
+    this[arcLarge] = false;
+    ;
+  }).prototype = path_parsing.PathSegmentData.prototype;
+  dart.addTypeTests(path_parsing.PathSegmentData);
+  dart.addTypeCaches(path_parsing.PathSegmentData);
+  dart.setMethodSignature(path_parsing.PathSegmentData, () => ({
+    __proto__: dart.getMethods(path_parsing.PathSegmentData.__proto__),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setGetterSignature(path_parsing.PathSegmentData, () => ({
+    __proto__: dart.getGetters(path_parsing.PathSegmentData.__proto__),
+    arcRadii: dart.legacy(path_parsing._PathOffset),
+    arcAngle: dart.legacy(core.double),
+    r1: dart.legacy(core.double),
+    r2: dart.legacy(core.double),
+    largeArcFlag: dart.legacy(core.bool),
+    sweepFlag: dart.legacy(core.bool),
+    x: dart.legacy(core.double),
+    y: dart.legacy(core.double),
+    x1: dart.legacy(core.double),
+    y1: dart.legacy(core.double),
+    x2: dart.legacy(core.double),
+    y2: dart.legacy(core.double)
+  }));
+  dart.setSetterSignature(path_parsing.PathSegmentData, () => ({
+    __proto__: dart.getSetters(path_parsing.PathSegmentData.__proto__),
+    arcAngle: dart.legacy(core.double)
+  }));
+  dart.setLibraryUri(path_parsing.PathSegmentData, L0);
+  dart.setFieldSignature(path_parsing.PathSegmentData, () => ({
+    __proto__: dart.getFields(path_parsing.PathSegmentData.__proto__),
+    command: dart.fieldType(dart.legacy(path_segment_type.SvgPathSegType)),
+    targetPoint: dart.fieldType(dart.legacy(path_parsing._PathOffset)),
+    point1: dart.fieldType(dart.legacy(path_parsing._PathOffset)),
+    point2: dart.fieldType(dart.legacy(path_parsing._PathOffset)),
+    arcSweep: dart.fieldType(dart.legacy(core.bool)),
+    arcLarge: dart.fieldType(dart.legacy(core.bool))
+  }));
+  dart.defineExtensionMethods(path_parsing.PathSegmentData, ['toString']);
+  var _currentPoint = dart.privateName(path_parsing, "_currentPoint");
+  var _subPathPoint = dart.privateName(path_parsing, "_subPathPoint");
+  var _controlPoint = dart.privateName(path_parsing, "_controlPoint");
+  var _lastCommand = dart.privateName(path_parsing, "_lastCommand");
+  var _decomposeArcToCubic = dart.privateName(path_parsing, "_decomposeArcToCubic");
+  var _mapPoint = dart.privateName(path_parsing, "_mapPoint");
+  path_parsing.SvgPathNormalizer = class SvgPathNormalizer extends core.Object {
+    emitSegment(segment, path) {
+      let t0, t0$, t0$0, t0$1, t0$2;
+      let normSeg = segment;
+      if (!(normSeg.command == path_segment_type.SvgPathSegType.close || normSeg.targetPoint != null)) dart.assertFailed(null, L1, 497, 9, "normSeg.command == SvgPathSegType.close || normSeg.targetPoint != null");
+      if (!(this[_currentPoint] != null)) dart.assertFailed(null, L1, 498, 12, "_currentPoint != null");
+      let labelState = segment.command;
+      SL1:
+        while (true) {
+          switch (labelState) {
+            case C16 || CT.C16:
+            {
+              t0 = normSeg;
+              t0.point1 = t0.point1['+'](this[_currentPoint]);
+              t0$ = normSeg;
+              t0$.targetPoint = t0$.targetPoint['+'](this[_currentPoint]);
+              break SL1;
+            }
+            case C2 || CT.C2:
+            {
+              t0$0 = normSeg;
+              t0$0.point1 = t0$0.point1['+'](this[_currentPoint]);
+              labelState = C1 || CT.C1;
+              continue SL1;
+            }
+            case C1 || CT.C1:
+            {
+              t0$1 = normSeg;
+              t0$1.point2 = t0$1.point2['+'](this[_currentPoint]);
+              labelState = C4 || CT.C4;
+              continue SL1;
+            }
+            case C4 || CT.C4:
+            case C7 || CT.C7:
+            case C11 || CT.C11:
+            case C13 || CT.C13:
+            case C9 || CT.C9:
+            case C18 || CT.C18:
+            {
+              t0$2 = normSeg;
+              t0$2.targetPoint = t0$2.targetPoint['+'](this[_currentPoint]);
+              break SL1;
+            }
+            case C12 || CT.C12:
+            {
+              normSeg.targetPoint = new path_parsing._PathOffset.new(normSeg.targetPoint.dx, this[_currentPoint].dy);
+              break SL1;
+            }
+            case C14 || CT.C14:
+            {
+              normSeg.targetPoint = new path_parsing._PathOffset.new(this[_currentPoint].dx, normSeg.targetPoint.dy);
+              break SL1;
+            }
+            case C15 || CT.C15:
+            {
+              normSeg.targetPoint = this[_subPathPoint];
+              break SL1;
+            }
+            default:
+            {
+              break SL1;
+              break SL1;
+            }
+          }
+          break;
+        }
+      let labelState$ = segment.command;
+      SL2:
+        while (true) {
+          switch (labelState$) {
+            case C4 || CT.C4:
+            case C6 || CT.C6:
+            {
+              this[_subPathPoint] = normSeg.targetPoint;
+              path.moveTo(normSeg.targetPoint.dx, normSeg.targetPoint.dy);
+              break SL2;
+            }
+            case C7 || CT.C7:
+            case C8 || CT.C8:
+            case C11 || CT.C11:
+            case C12 || CT.C12:
+            case C13 || CT.C13:
+            case C14 || CT.C14:
+            {
+              path.lineTo(normSeg.targetPoint.dx, normSeg.targetPoint.dy);
+              break SL2;
+            }
+            case C15 || CT.C15:
+            {
+              path.close();
+              break SL2;
+            }
+            case C1 || CT.C1:
+            case C5 || CT.C5:
+            {
+              if (!dart.test(path_parsing.isCubicCommand(this[_lastCommand]))) {
+                normSeg.point1 = this[_currentPoint];
+              } else {
+                normSeg.point1 = path_parsing.OffsetHelper.reflectedPoint(this[_currentPoint], this[_controlPoint]);
+              }
+              labelState$ = C2 || CT.C2;
+              continue SL2;
+            }
+            case C2 || CT.C2:
+            case C3 || CT.C3:
+            {
+              this[_controlPoint] = normSeg.point2;
+              path.cubicTo(normSeg.point1.dx, normSeg.point1.dy, normSeg.point2.dx, normSeg.point2.dy, normSeg.targetPoint.dx, normSeg.targetPoint.dy);
+              break SL2;
+            }
+            case C9 || CT.C9:
+            case C10 || CT.C10:
+            {
+              if (!dart.test(path_parsing.isQuadraticCommand(this[_lastCommand]))) {
+                normSeg.point1 = this[_currentPoint];
+              } else {
+                normSeg.point1 = path_parsing.OffsetHelper.reflectedPoint(this[_currentPoint], this[_controlPoint]);
+              }
+              labelState$ = C16 || CT.C16;
+              continue SL2;
+            }
+            case C16 || CT.C16:
+            case C17 || CT.C17:
+            {
+              this[_controlPoint] = normSeg.point1;
+              normSeg.point1 = path_parsing.OffsetHelper.blendPoints(this[_currentPoint], this[_controlPoint]);
+              normSeg.point2 = path_parsing.OffsetHelper.blendPoints(normSeg.targetPoint, this[_controlPoint]);
+              path.cubicTo(normSeg.point1.dx, normSeg.point1.dy, normSeg.point2.dx, normSeg.point2.dy, normSeg.targetPoint.dx, normSeg.targetPoint.dy);
+              break SL2;
+            }
+            case C18 || CT.C18:
+            case C19 || CT.C19:
+            {
+              if (!dart.test(this[_decomposeArcToCubic](this[_currentPoint], normSeg, path))) {
+                path.lineTo(normSeg.targetPoint.dx, normSeg.targetPoint.dy);
+              }
+              break SL2;
+            }
+            default:
+            {
+              dart.throw(new core.StateError.new("Invalid command type in path"));
+              break SL2;
+            }
+          }
+          break;
+        }
+      this[_currentPoint] = normSeg.targetPoint;
+      if (!dart.test(path_parsing.isCubicCommand(segment.command)) && !dart.test(path_parsing.isQuadraticCommand(segment.command))) {
+        this[_controlPoint] = this[_currentPoint];
+      }
+      this[_lastCommand] = segment.command;
+    }
+    [_decomposeArcToCubic](currentPoint, arcSegment, path) {
+      let rx = arcSegment.arcRadii.dx[$abs]();
+      let ry = arcSegment.arcRadii.dy[$abs]();
+      if (rx === 0 || ry === 0) {
+        return false;
+      }
+      if (dart.equals(arcSegment.targetPoint, currentPoint)) {
+        return false;
+      }
+      let angle = arcSegment.arcAngle;
+      let midPointDistance = currentPoint['-'](arcSegment.targetPoint)['*'](0.5);
+      let pointTransform = vector_math.Matrix4.identity();
+      pointTransform.rotateZ(-dart.notNull(angle));
+      let transformedMidPoint = this[_mapPoint](pointTransform, new path_parsing._PathOffset.new(midPointDistance.dx, midPointDistance.dy));
+      let squareRx = rx * rx;
+      let squareRy = ry * ry;
+      let squareX = dart.notNull(transformedMidPoint.dx) * dart.notNull(transformedMidPoint.dx);
+      let squareY = dart.notNull(transformedMidPoint.dy) * dart.notNull(transformedMidPoint.dy);
+      let radiiScale = squareX / squareRx + squareY / squareRy;
+      if (radiiScale > 1.0) {
+        rx = rx * math.sqrt(radiiScale);
+        ry = ry * math.sqrt(radiiScale);
+      }
+      pointTransform.setIdentity();
+      pointTransform.scale(1.0 / rx, 1.0 / ry);
+      pointTransform.rotateZ(-dart.notNull(angle));
+      let point1 = this[_mapPoint](pointTransform, currentPoint);
+      let point2 = this[_mapPoint](pointTransform, arcSegment.targetPoint);
+      let delta = point2['-'](point1);
+      let d = dart.notNull(delta.dx) * dart.notNull(delta.dx) + dart.notNull(delta.dy) * dart.notNull(delta.dy);
+      let scaleFactorSquared = math.max(doubleL(), 1.0 / d - 0.25, 0.0);
+      let scaleFactor = math.sqrt(scaleFactorSquared);
+      if (!scaleFactor[$isFinite]) {
+        scaleFactor = 0.0;
+      }
+      if (dart.equals(arcSegment.arcSweep, arcSegment.arcLarge)) {
+        scaleFactor = -scaleFactor;
+      }
+      delta = delta['*'](scaleFactor);
+      let centerPoint = point1['+'](point2)['*'](0.5).translate(-dart.notNull(delta.dy), delta.dx);
+      let theta1 = point1['-'](centerPoint).direction;
+      let theta2 = point2['-'](centerPoint).direction;
+      let thetaArc = dart.notNull(theta2) - dart.notNull(theta1);
+      if (thetaArc < 0.0 && dart.test(arcSegment.arcSweep)) {
+        thetaArc = thetaArc + 6.283185307179586;
+      } else if (thetaArc > 0.0 && !dart.test(arcSegment.arcSweep)) {
+        thetaArc = thetaArc - 6.283185307179586;
+      }
+      pointTransform.setIdentity();
+      pointTransform.rotateZ(angle);
+      pointTransform.scale(rx, ry);
+      let segments = (thetaArc / (1.5707963267948966 + 0.001))[$abs]()[$ceil]();
+      for (let i = 0; i < segments; i = i + 1) {
+        let startTheta = dart.notNull(theta1) + i * thetaArc / segments;
+        let endTheta = dart.notNull(theta1) + (i + 1) * thetaArc / segments;
+        let t = 8.0 / 6.0 * math.tan(0.25 * (endTheta - startTheta));
+        if (!t[$isFinite]) {
+          return false;
+        }
+        let sinStartTheta = math.sin(startTheta);
+        let cosStartTheta = math.cos(startTheta);
+        let sinEndTheta = math.sin(endTheta);
+        let cosEndTheta = math.cos(endTheta);
+        point1 = new path_parsing._PathOffset.new(cosStartTheta - t * sinStartTheta, sinStartTheta + t * cosStartTheta).translate(centerPoint.dx, centerPoint.dy);
+        let targetPoint = new path_parsing._PathOffset.new(cosEndTheta, sinEndTheta).translate(centerPoint.dx, centerPoint.dy);
+        point2 = targetPoint.translate(t * sinEndTheta, -t * cosEndTheta);
+        let cubicSegment = new path_parsing.PathSegmentData.new();
+        cubicSegment.command = path_segment_type.SvgPathSegType.cubicToAbs;
+        cubicSegment.point1 = this[_mapPoint](pointTransform, point1);
+        cubicSegment.point2 = this[_mapPoint](pointTransform, point2);
+        cubicSegment.targetPoint = this[_mapPoint](pointTransform, targetPoint);
+        path.cubicTo(cubicSegment.x1, cubicSegment.y1, cubicSegment.x2, cubicSegment.y2, cubicSegment.x, cubicSegment.y);
+      }
+      return true;
+    }
+    [_mapPoint](transform, point) {
+      return new path_parsing._PathOffset.new(dart.notNull(transform.storage[$_get](0)) * dart.notNull(point.dx) + dart.notNull(transform.storage[$_get](4)) * dart.notNull(point.dy) + dart.notNull(transform.storage[$_get](12)), dart.notNull(transform.storage[$_get](1)) * dart.notNull(point.dx) + dart.notNull(transform.storage[$_get](5)) * dart.notNull(point.dy) + dart.notNull(transform.storage[$_get](13)));
+    }
+  };
+  (path_parsing.SvgPathNormalizer.new = function() {
+    this[_currentPoint] = path_parsing._PathOffset.zero;
+    this[_subPathPoint] = path_parsing._PathOffset.zero;
+    this[_controlPoint] = path_parsing._PathOffset.zero;
+    this[_lastCommand] = path_segment_type.SvgPathSegType.unknown;
+    ;
+  }).prototype = path_parsing.SvgPathNormalizer.prototype;
+  dart.addTypeTests(path_parsing.SvgPathNormalizer);
+  dart.addTypeCaches(path_parsing.SvgPathNormalizer);
+  dart.setMethodSignature(path_parsing.SvgPathNormalizer, () => ({
+    __proto__: dart.getMethods(path_parsing.SvgPathNormalizer.__proto__),
+    emitSegment: dart.fnType(dart.void, [dart.legacy(path_parsing.PathSegmentData), dart.legacy(path_parsing.PathProxy)]),
+    [_decomposeArcToCubic]: dart.fnType(dart.legacy(core.bool), [dart.legacy(path_parsing._PathOffset), dart.legacy(path_parsing.PathSegmentData), dart.legacy(path_parsing.PathProxy)]),
+    [_mapPoint]: dart.fnType(dart.legacy(path_parsing._PathOffset), [dart.legacy(vector_math.Matrix4), dart.legacy(path_parsing._PathOffset)])
+  }));
+  dart.setLibraryUri(path_parsing.SvgPathNormalizer, L0);
+  dart.setFieldSignature(path_parsing.SvgPathNormalizer, () => ({
+    __proto__: dart.getFields(path_parsing.SvgPathNormalizer.__proto__),
+    [_currentPoint]: dart.fieldType(dart.legacy(path_parsing._PathOffset)),
+    [_subPathPoint]: dart.fieldType(dart.legacy(path_parsing._PathOffset)),
+    [_controlPoint]: dart.fieldType(dart.legacy(path_parsing._PathOffset)),
+    [_lastCommand]: dart.fieldType(dart.legacy(path_segment_type.SvgPathSegType))
+  }));
+  path_parsing.writeSvgPathDataToPath = function writeSvgPathDataToPath(svg, path) {
+    if (svg == null || svg === "") {
+      return;
+    }
+    let parser = new path_parsing.SvgPathStringSource.new(svg);
+    let normalizer = new path_parsing.SvgPathNormalizer.new();
+    for (let seg of parser.parseSegments()) {
+      normalizer.emitSegment(seg, path);
+    }
+  };
+  path_parsing.isCubicCommand = function isCubicCommand(command) {
+    return command == path_segment_type.SvgPathSegType.cubicToAbs || command == path_segment_type.SvgPathSegType.cubicToRel || command == path_segment_type.SvgPathSegType.smoothCubicToAbs || command == path_segment_type.SvgPathSegType.smoothCubicToRel;
+  };
+  path_parsing.isQuadraticCommand = function isQuadraticCommand(command) {
+    return command == path_segment_type.SvgPathSegType.quadToAbs || command == path_segment_type.SvgPathSegType.quadToRel || command == path_segment_type.SvgPathSegType.smoothQuadToAbs || command == path_segment_type.SvgPathSegType.smoothQuadToRel;
+  };
+  dart.defineLazy(path_parsing, {
+    /*path_parsing._twoPiFloat*/get _twoPiFloat() {
+      return 6.283185307179586;
+    },
+    /*path_parsing._piOverTwoFloat*/get _piOverTwoFloat() {
+      return 1.5707963267948966;
+    }
+  }, true);
+  dart.trackLibraries("packages/path_parsing/src/path_parsing.dart", {
+    "package:path_parsing/src/path_parsing.dart": path_parsing
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["path_parsing.dart"],"names":[],"mappings":"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","file":"../../../../../../../../L:/packages/path_parsing/src/path_parsing.dart.lib.js"}');
+  // Exports:
+  return {
+    src__path_parsing: path_parsing
+  };
+}));
+
+//# sourceMappingURL=path_parsing.dart.lib.js.map
